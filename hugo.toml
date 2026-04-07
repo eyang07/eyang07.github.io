@@ -1,6 +1,39 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = "https://eyang07.github.io/"
+languageCode = "en-us"
+title = "Eric Yang"
 theme = "PaperMod"
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowBreadCrumbs = true
+  [params.homeInfoParams]
+    Title = "Eric Yang"
+    Content = ""
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/eyang07"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:ericyang2027@u.northwestern.edu"
+
 [params.math]
   enable = true
+
+[[menu.main]]
+  name = "Notes"
+  url = "/notes/"
+  weight = 1
+[[menu.main]]
+  name = "Research"
+  url = "/research/"
+  weight = 2
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 3
+[[menu.main]]
+  name = "CV"
+  url = "/cv/"
+  weight = 4
