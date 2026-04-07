@@ -1,5 +1,5 @@
 ---
-title: "CS 336: Semantics of Programming Languages"
+title: "CS 336: Algorithms Analysis"
 math: true
 draft: true
 ---
