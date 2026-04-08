@@ -8,6 +8,8 @@ theme = "PaperMod"
   ShowReadingTime = false
   ShowShareButtons = false
   ShowBreadCrumbs = true
+  ShowAllPagesInArchive = false
+  mainSections = ["research", "projects"]
   [params.homeInfoParams]
     Title = "Eric Yang"
     Content = ""
@@ -33,7 +35,3 @@ theme = "PaperMod"
   name = "Projects"
   url = "/projects/"
   weight = 3
-[[menu.main]]
-  name = "CV"
-  url = "/cv/"
-  weight = 4
