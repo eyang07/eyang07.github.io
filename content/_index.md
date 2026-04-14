@@ -4,7 +4,12 @@ layout: "home"
 summary: "Mathematics & Computer Engineering @ Northwestern University"
 ---
 
-![](/images/poincare.gif)
+<video autoplay loop muted playsinline width="100%">
+  <source src="/images/poincare.mp4" type="video/mp4">
+</video>
+<p style="text-align: center; font-size: 0.85em; color: gray; margin-top: 0.5em;">
+  20 special periodic solutions to the three-body problem
+</p>
 
 I am a junior studying Computer Engineering and Pure Mathematics at Northwestern University. My research interests lie at the intersection of formal verification, type theory, and applied analysis topics such as analytical mechanics and control theory. In other words, I am interested in AI theorem proving in Lean, formal verification of physical safety properties.
 
