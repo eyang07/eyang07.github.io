@@ -180,6 +180,9 @@ collections:
   notes:
     output: true
     permalink: /notes/:path/
+  talks:
+    output: true
+    permalink: /talks/:path/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
