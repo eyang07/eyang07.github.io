@@ -3,8 +3,6 @@ layout: about
 title: about
 permalink: /
 subtitle: <a href='https://www.northwestern.edu'>Northwestern University</a>. Computer Engineering & Pure Mathematics.
-nav: true
-nav_order: 1
 
 profile:
   align: right
