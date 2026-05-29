@@ -7,4 +7,7 @@ nav: true
 nav_order: 4
 ---
 
-*Coming soon.*
+<ul>
+  <li>Deductive Verification vs. Model Checking for Physical Safety of a Feedback-Controlled Drone</li>
+  <li>Northwestern Undergraduate Lean Lab</li>
+</ul>

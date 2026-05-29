@@ -10,7 +10,7 @@ nav_order: 3
 <div class="presentations">
 {% assign sorted_presentations = site.presentations | sort: "term" | reverse %}
 
-## At Northwestern
+<h2>At Northwestern</h2>
 
 <ul>
   {% for presentation in sorted_presentations %}
