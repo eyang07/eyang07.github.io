@@ -1,7 +1,7 @@
 ---
 layout: page
 title: AI-Assisted Theorem Proving in Lean
-date: 2026-02-01
+date: Summer 2025
 venue:
 slides: /assets/pdf/presentations/AI-Assisted Theorem Proving.pdf
 permalink: /presentations/ai-assisted-theorem-proving-in-lean/

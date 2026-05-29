@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "L3: A Linear Language with Location"
-date: 2026-03-01
+date: Spring 2026
 venue:
 slides: /assets/pdf/presentations/L3.pdf
 permalink: /presentations/l3-linear-language-with-location/

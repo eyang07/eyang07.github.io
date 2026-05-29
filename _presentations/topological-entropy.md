@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Topological Entropy
-date: 2026-05-01
+date: Spring 2026
 venue:
 permalink: /presentations/topological-entropy/
 ---

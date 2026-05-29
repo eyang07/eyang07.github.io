@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Deductive Proof vs. Model Checking
-date: 2026-04-01
+date: Spring 2026
 venue:
 slides: /assets/pdf/presentations/Deductive Proof vs. Model Checking.pdf
 permalink: /presentations/deductive-proof-vs-model-checking/
