@@ -8,7 +8,7 @@ nav_order: 3
 ---
 
 <div class="presentations">
-{% assign sorted_presentations = site.presentations | sort: "date" | reverse %}
+{% assign sorted_presentations = site.presentations | sort: "term" | reverse %}
 
 ## At Northwestern
 
@@ -17,7 +17,7 @@ nav_order: 3
     <li>
       <a href="{{ presentation.url | relative_url }}"><strong>{{ presentation.title }}</strong></a>
       {% if presentation.venue %} — <em>{{ presentation.venue }}</em>{% endif %}
-      {% if presentation.date %} <span style="color: gray;">({{ presentation.date }})</span>{% endif %}
+      {% if presentation.term %} <span style="color: gray;">({{ presentation.term }})</span>{% endif %}
       {% if presentation.slides %} · <a href="{{ presentation.slides | relative_url | uri_escape }}">[pdf]</a>{% endif %}
     </li>
   {% endfor %}

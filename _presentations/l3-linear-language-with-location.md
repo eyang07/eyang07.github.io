@@ -1,13 +1,13 @@
 ---
 layout: page
 title: "L3: A Linear Language with Location"
-date: Spring 2026
+term: Spring 2026
 venue: CS 324 Class Presentation
 slides: /assets/pdf/presentations/L3.pdf
 permalink: /presentations/l3-linear-language-with-location/
 ---
 
-{% if page.venue %}*Presented at {{ page.venue }} on {{ page.date | date: "%B %-d, %Y" }}.*{% else %}*{{ page.date | date: "%B %-d, %Y" }}.*{% endif %}
+{% if page.venue %}*Presented at {{ page.venue }}{% if page.term %}, {{ page.term }}{% endif %}.*{% elsif page.term %}*{{ page.term }}.*{% endif %}
 
 <a href="{{ page.slides | relative_url | uri_escape }}" class="btn btn-sm z-depth-0" target="_blank">
   <i class="fas fa-file-pdf"></i> Download slides (PDF)

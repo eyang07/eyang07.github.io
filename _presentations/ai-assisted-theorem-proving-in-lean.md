@@ -1,13 +1,13 @@
 ---
 layout: page
 title: AI-Assisted Theorem Proving in Lean
-date: Summer 2025
+term: Summer 2025
 venue: IDEAS Lab
 slides: /assets/pdf/presentations/AI-Assisted Theorem Proving.pdf
 permalink: /presentations/ai-assisted-theorem-proving-in-lean/
 ---
 
-{% if page.venue %}*Presented at {{ page.venue }} on {{ page.date | date: "%B %-d, %Y" }}.*{% else %}*{{ page.date | date: "%B %-d, %Y" }}.*{% endif %}
+{% if page.venue %}*Presented at {{ page.venue }}{% if page.term %}, {{ page.term }}{% endif %}.*{% elsif page.term %}*{{ page.term }}.*{% endif %}
 
 <a href="{{ page.slides | relative_url | uri_escape }}" class="btn btn-sm z-depth-0" target="_blank">
   <i class="fas fa-file-pdf"></i> Download slides (PDF)
