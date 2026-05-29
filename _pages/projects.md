@@ -5,27 +5,19 @@ permalink: /projects/
 description: A collection of projects.
 nav: true
 nav_order: 5
-horizontal: false
 ---
 
 <div class="projects">
 {% assign sorted_projects = site.projects | sort: "importance" %}
 {% if sorted_projects.size > 0 %}
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
+<ul>
+  {% for project in sorted_projects %}
+    <li>
+      <a href="{{ project.url | relative_url }}"><strong>{{ project.title }}</strong></a>
+      {% if project.context %} <span style="color: gray;">({{ project.context }})</span>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
 {% else %}
   <p><em>Coming soon.</em></p>
 {% endif %}

@@ -2,7 +2,7 @@
 layout: page
 title: Topological Entropy
 date: Spring 2026
-venue:
+venue: Northwestern Math Department
 permalink: /presentations/topological-entropy/
 ---
 

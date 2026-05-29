@@ -9,6 +9,9 @@ nav_order: 2
 
 <div class="notes">
 {% assign sorted_notes = site.notes | sort: "course_code" %}
+
+## Class Notes
+
 <ul>
   {% for note in sorted_notes %}
     <li>
