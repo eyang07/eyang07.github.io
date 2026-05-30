@@ -3,6 +3,7 @@ layout: page
 title: Topological Entropy
 term: Spring 2026
 venue: Northwestern Math Department
+slides: /assets/pdf/presentations/Topological Entropy.pdf
 permalink: /presentations/topological-entropy/
 ---
 
