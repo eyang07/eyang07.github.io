@@ -7,6 +7,8 @@ slides: /assets/pdf/presentations/AI-Assisted Theorem Proving.pdf
 permalink: /presentations/ai-assisted-theorem-proving-in-lean/
 ---
 
+Summer Research Project at the IDEAS Lab. First introduction to Lean and Interactive Theorem Provers.
+
 {% if page.venue %}*Presented at {{ page.venue }}{% if page.term %}, {{ page.term }}{% endif %}.*{% elsif page.term %}*{{ page.term }}.*{% endif %}
 
 <a href="{{ page.slides | relative_url | uri_escape }}" class="btn btn-sm z-depth-0" target="_blank">
