@@ -2,13 +2,17 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.northwestern.edu'>Northwestern University</a>. Computer Engineering & Pure Mathematics.
+subtitle:
 
 profile:
-  align: right
-  image:
-  image_circular: false
-  more_info:
+  align: left
+  image: prof_pic.jpg
+  image_circular: true
+  more_info: >
+    <a href='https://www.northwestern.edu'>Northwestern University</a><br>
+    Computer Engineering &amp; Pure Mathematics<br>
+    Math &middot; Formal Methods &middot; AI<br>
+    📍 Evanston, IL
 
 selected_papers: false
 social: true
@@ -20,15 +24,10 @@ latest_posts:
   enabled: false
 ---
 
-<div style="margin-bottom: 1.5em;">
-  <video autoplay loop muted playsinline style="width: 100%; max-width: 100%; display: block;">
-    <source src="{{ '/assets/video/poincare.mp4' | relative_url }}" type="video/mp4">
-  </video>
-  <p style="text-align: center; font-size: 0.85em; color: gray; margin-top: 0.5em;">
-    20 special periodic solutions to the three-body problem
-  </p>
-</div>
-
 I am a junior at Northwestern University pursuing a B.S./M.S. in Computer Engineering and a B.A. in Mathematics with a concentration in Pure Mathematics. My research interests lie at the intersection of math, formal methods, and AI. I am particularly interested in energy-based models and formal verification using Lean.
 
 Currently, I work as a research assistant at the IDEAS Lab, where I focus on formal verification projects. I also contribute to DeepMind's Formal Conjectures through the Northwestern Lean Lab.
+
+## Education
+
+{% include education.liquid %}

@@ -1,0 +1,85 @@
+{%- comment -%}
+  Education timeline — al-folio v1.x has no native equivalent.
+  Iterates site.data.education and renders each school as a horizontal flex row:
+  logo (64x64, object-fit: contain) on the left; school / dates / degree / notes
+  stacked on the right.
+
+  Styling note: this site uses al-folio v1.x with the Tailwind style engine. The
+  theme layouts/_sass live inside the al_folio_core gem (which we do not edit), and
+  there is no local SCSS partial to override. So the custom styles below are kept
+  here, scoped, and expressed with al-folio's runtime CSS custom properties
+  (--global-*) so the timeline automatically respects light/dark mode.
+{%- endcomment -%}
+
+<style>
+  /* Airier line spacing for the about content (RayeRen acad-homepage feel).
+     .clearfix is the al-folio about-layout content wrapper. */
+  .clearfix {
+    line-height: 1.6;
+  }
+
+  .education {
+    margin-top: 1rem;
+  }
+
+  .edu-entry {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .edu-entry .edu-logo {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-top: 0.15rem;
+  }
+
+  .edu-entry .edu-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.45;
+  }
+
+  .edu-entry .edu-school {
+    font-weight: 700;
+    color: var(--global-text-color);
+  }
+
+  .edu-entry .edu-dates {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+
+  .edu-entry .edu-degree {
+    color: var(--global-text-color);
+  }
+
+  .edu-entry .edu-notes {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+  }
+
+  .edu-entry .edu-notes a {
+    color: var(--global-theme-color);
+  }
+</style>
+
+<div class="education">
+  {%- for edu in site.data.education -%}
+  <div class="edu-entry">
+    {%- if edu.logo -%}
+    <img class="edu-logo" src="{{ edu.logo | relative_url }}" alt="{{ edu.school | escape }} logo" loading="lazy" />
+    {%- endif -%}
+    <div class="edu-details">
+      <span class="edu-school">{{ edu.school }}</span>
+      {%- if edu.dates -%}<span class="edu-dates">{{ edu.dates }}</span>{%- endif -%}
+      {%- if edu.degree -%}<span class="edu-degree">{{ edu.degree }}</span>{%- endif -%}
+      {%- if edu.notes -%}<span class="edu-notes">{{ edu.notes }}</span>{%- endif -%}
+    </div>
+  </div>
+  {%- endfor -%}
+</div>
