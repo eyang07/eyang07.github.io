@@ -6,4 +6,4 @@ importance: 2
 permalink: /projects/arm-space-shooter/
 ---
 
-*Coming soon.*
+A demo of the game can be watched here: <https://youtu.be/3iqZK1-63CY>
