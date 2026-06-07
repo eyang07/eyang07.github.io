@@ -2,7 +2,7 @@
 layout: page
 title: presentations
 permalink: /presentations/
-description: Slides from class, reading-course, and research presentations.
+description: false
 nav: true
 nav_order: 4
 ---

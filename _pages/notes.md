@@ -2,7 +2,7 @@
 layout: page
 title: notes
 permalink: /notes/
-description: Course notes and miscellaneous mathematical writings.
+description: Course notes.
 nav: true
 nav_order: 5
 ---

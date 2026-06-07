@@ -6,10 +6,6 @@
 #   logo    - path under /assets/img/ (square-ish PNG works best at 64x64)
 #   notes   - lab + advisor; inline HTML / links allowed (use YAML ">" block)
 - school: Northwestern University
-  dates: 2023 &ndash; 2028 (expected)
-  degree: B.S./M.S. in Computer Engineering &middot; B.A. in Mathematics (Pure Mathematics)
+  dates: 2023 &ndash; 2027 (expected)
+  degree: B.S. in Computer Engineering &middot; B.A. in Mathematics
   logo: /assets/img/edu/northwestern.png
-  notes: >
-    Research Assistant at the IDEAS Lab, working on formal verification.
-    Member of the Northwestern Lean Lab, contributing to DeepMind's
-    <a href="https://github.com/google-deepmind/formal-conjectures">Formal Conjectures</a>.

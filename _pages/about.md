@@ -24,9 +24,9 @@ latest_posts:
   enabled: false
 ---
 
-I am a junior at Northwestern University pursuing a B.S./M.S. in Computer Engineering and a B.A. in Mathematics with a concentration in Pure Mathematics. My research interests lie at the intersection of math, formal methods, and AI. I am particularly interested in energy-based models and formal verification using Lean.
+I am a junior at Northwestern University studying Computer Engineering and Mathematics. My research interests lie at the intersection of math, formal methods, and AI. I am particularly interested in energy-based models and formal verification using Lean. I also enjoy learning about mathematical physics.
 
-Currently, I work as a research assistant at the IDEAS Lab, where I focus on formal verification projects. I also contribute to DeepMind's Formal Conjectures through the Northwestern Lean Lab.
+Currently, I work as a research assistant at the IDEAS Lab, where I work on formal verification projects. I also contributed to DeepMind's <a href="https://github.com/google-deepmind/formal-conjectures">Formal Conjectures</a> through the Northwestern Lean Lab.
 
 ## Education
 
