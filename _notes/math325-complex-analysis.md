@@ -2,6 +2,7 @@
 layout: page
 title: Complex Analysis
 course_code: MATH 325
+department: Mathematics
 permalink: /notes/math325-complex-analysis/
 ---
 

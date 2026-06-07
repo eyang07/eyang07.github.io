@@ -1,0 +1,159 @@
+{%- comment -%}
+  Shared listing component for collection pages (projects, research,
+  presentations, notes). Renders each item as a clean typographic row:
+
+    [optional thumbnail]  Title  <meta pills>
+                          one-line description
+                          [action links]
+
+  This is the single place that controls how every listing on the site looks.
+  To change the look of all listings, edit this file.
+
+  Parameters:
+    items      (required) an array of collection documents to render
+    group_by   (optional) front-matter field name to group rows under <h2>s
+    empty      (optional) message shown when there are no visible items
+
+  Per-item front matter (all optional unless noted):
+    title          (required) heading text
+    url            internal permalink (default link target)
+    external_url   if set, the title links here instead of the detail page
+    image          path under /assets/ for a left-hand thumbnail; OMIT for a
+                   clean text-only row — thumbnails are opt-in per item
+    description    one-line summary shown under the title
+    links          list of { label, url } rendered as action links
+    slides         convenience: a PDF path rendered as a "slides" link
+    draft          if true, the item is hidden from the listing
+    meta pills (rendered in this order when present):
+      course_code, context, role, venue, term, year, status
+
+  Styling: scoped <style> below, expressed with al-folio's runtime CSS custom
+  properties (--global-*) so it respects light/dark mode automatically. (This
+  site has no local SCSS partial — the theme styles live in the gem — so scoped
+  styles in includes are the established pattern, see education.liquid.)
+{%- endcomment -%}
+
+<style>
+  .entry-list {
+    margin-top: 1rem;
+  }
+
+  .entry {
+    display: flex;
+    gap: 1.1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+    align-items: flex-start;
+  }
+
+  .entry:first-child {
+    padding-top: 0;
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+  }
+
+  .entry-thumb {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--global-divider-color);
+  }
+
+  .entry-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .entry-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: var(--global-text-color);
+  }
+
+  .entry-title:hover {
+    color: var(--global-theme-color);
+  }
+
+  .entry-pill {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.13rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--global-divider-color);
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+  }
+
+  .entry-desc {
+    margin: 0.4rem 0 0.5rem;
+    color: var(--global-text-color-light);
+    line-height: 1.5;
+  }
+
+  .entry-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .entry-links a {
+    color: var(--global-theme-color);
+  }
+
+  .entry-group {
+    margin-top: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .entry-group:first-child {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 576px) {
+    .entry {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .entry-thumb {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+    }
+  }
+</style>
+
+{%- assign visible = include.items | where_exp: "i", "i.draft != true" -%}
+
+{%- if visible == nil or visible.size == 0 -%}
+  <p><em>{{ include.empty | default: "Coming soon." }}</em></p>
+{%- elsif include.group_by -%}
+  {%- assign groups = visible | group_by: include.group_by -%}
+  {%- for group in groups -%}
+    {%- if group.name and group.name != "" -%}
+      <h2 class="entry-group">{{ group.name }}</h2>
+    {%- endif -%}
+    <div class="entry-list">
+      {%- for item in group.items -%}{% include entry-row.liquid item=item group_field=include.group_by %}{%- endfor -%}
+    </div>
+  {%- endfor -%}
+{%- else -%}
+  <div class="entry-list">
+    {%- for item in visible -%}{% include entry-row.liquid item=item %}{%- endfor -%}
+  </div>
+{%- endif -%}

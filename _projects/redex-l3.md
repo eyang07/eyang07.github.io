@@ -3,6 +3,13 @@ layout: page
 title: Redex implementation of L3
 context: CS 324
 importance: 1
+featured: true
+description: A small-step semantics for L3, a linear language with locations, implemented in PLT Redex.
+links:
+  - label: code
+    url: https://github.com/eyang07/L3redex
+  - label: talk
+    url: /presentations/l3-linear-language-with-location/
 permalink: /projects/redex-l3/
 ---
 

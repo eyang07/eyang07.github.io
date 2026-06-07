@@ -2,6 +2,7 @@
 layout: page
 title: Deductive Proof vs. Model Checking
 term: Spring 2026
+year: 2026
 venue: Northwestern Undergraduate Research Expo
 slides: /assets/pdf/presentations/Deductive Proof vs. Model Checking.pdf
 permalink: /presentations/deductive-proof-vs-model-checking/

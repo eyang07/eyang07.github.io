@@ -28,6 +28,13 @@ I am a junior at Northwestern University studying Computer Engineering and Mathe
 
 Currently, I work as a research assistant at the IDEAS Lab, where I work on formal verification projects. I also contributed to DeepMind's <a href="https://github.com/google-deepmind/formal-conjectures">Formal Conjectures</a> through the Northwestern Lean Lab.
 
+## Selected work
+
+{% assign featured_research = site.research | where: "featured", true %}
+{% assign featured_projects = site.projects | where: "featured", true %}
+{% assign featured = featured_research | concat: featured_projects | sort: "importance" %}
+{% include entry-list.liquid items=featured empty="Coming soon." %}
+
 ## Education
 
 {% include education.liquid %}

@@ -6,19 +6,5 @@ nav: true
 nav_order: 4
 ---
 
-<div class="presentations">
-{% assign sorted_presentations = site.presentations | sort: "term" | reverse %}
-
-<h2>At Northwestern</h2>
-
-<ul>
-  {% for presentation in sorted_presentations %}
-    <li>
-      <a href="{{ presentation.url | relative_url }}"><strong>{{ presentation.title }}</strong></a>
-      {% if presentation.venue %} — <em>{{ presentation.venue }}</em>{% endif %}
-      {% if presentation.term %} <span style="color: gray;">({{ presentation.term }})</span>{% endif %}
-      {% if presentation.slides %} · <a href="{{ presentation.slides | relative_url | uri_escape }}">[pdf]</a>{% endif %}
-    </li>
-  {% endfor %}
-</ul>
-</div>
+{% assign sorted_presentations = site.presentations | sort: "year" | reverse %}
+{% include entry-list.liquid items=sorted_presentations group_by="year" empty="Coming soon." %}

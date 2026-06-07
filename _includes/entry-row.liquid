@@ -1,0 +1,52 @@
+{%- comment -%}
+  Renders a single listing row. Used by entry-list.liquid; not meant to be
+  called directly from pages. Expects:
+    include.item        a collection document
+    include.group_field (optional) the field currently used for grouping; the
+                        matching pill is suppressed so it doesn't repeat the
+                        group heading.
+{%- endcomment -%}
+{%- assign item = include.item -%}
+{%- assign gf = include.group_field -%}
+{%- if item.external_url -%}
+  {%- assign link = item.external_url -%}
+{%- else -%}
+  {%- assign link = item.url | relative_url -%}
+{%- endif -%}
+
+<div class="entry">
+  {%- if item.image -%}
+  <a class="entry-thumb-link" href="{{ link }}">
+    <img class="entry-thumb" src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}" loading="lazy" />
+  </a>
+  {%- endif -%}
+  <div class="entry-body">
+    <div class="entry-head">
+      <a class="entry-title" href="{{ link }}">{{ item.title }}</a>
+      {%- if item.course_code and gf != "course_code" -%}<span class="entry-pill">{{ item.course_code }}</span>{%- endif -%}
+      {%- if item.context and gf != "context" -%}<span class="entry-pill">{{ item.context }}</span>{%- endif -%}
+      {%- if item.role and gf != "role" -%}<span class="entry-pill">{{ item.role }}</span>{%- endif -%}
+      {%- if item.venue and gf != "venue" -%}<span class="entry-pill">{{ item.venue }}</span>{%- endif -%}
+      {%- if item.term and gf != "term" -%}<span class="entry-pill">{{ item.term }}</span>{%- endif -%}
+      {%- if item.year and gf != "year" -%}<span class="entry-pill">{{ item.year }}</span>{%- endif -%}
+      {%- if item.status and gf != "status" -%}<span class="entry-pill">{{ item.status }}</span>{%- endif -%}
+    </div>
+    {%- if item.description and item.description != "" -%}
+    <p class="entry-desc">{{ item.description }}</p>
+    {%- endif -%}
+    {%- if item.links or item.slides -%}
+    <div class="entry-links">
+      {%- for l in item.links -%}
+      {%- if l.url contains "://" -%}
+      <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+      {%- else -%}
+      <a href="{{ l.url | relative_url }}">{{ l.label }}</a>
+      {%- endif -%}
+      {%- endfor -%}
+      {%- if item.slides -%}
+      <a href="{{ item.slides | relative_url | uri_escape }}" target="_blank">slides [pdf]</a>
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+  </div>
+</div>
