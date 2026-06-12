@@ -1,0 +1,653 @@
+\documentclass[11pt]{article}
+\usepackage{assets/tex/notes/eric-notes-style}
+
+\begin{document}
+
+\notetitle{MATH 320-2: Real Analysis II Notes}{Series, Uniform Convergence, and Metric Spaces}
+
+\topic{Series Convergence}
+
+\entry{Convergence of series}
+\[
+\text{Let }s_n=\sum_{k=1}^{n}a_k,\qquad
+\sum_{k=1}^{\infty}a_k\text{ converges if }\{s_n\}\text{ converges.}
+\]
+\[
+\sum_{k=1}^{\infty}a_k=\lim_{n\to\infty}s_n.
+\]
+
+\entry{Divergence test}
+\[
+\text{If }a_k\not\to0,\text{ then }\sum_{k=1}^{\infty}a_k\text{ diverges.}
+\]
+
+\entry{Geometric series test}
+\[
+\sum_{k=0}^{\infty}ar^k\text{ converges}\Longleftrightarrow |r|<1,
+\qquad
+\sum_{k=0}^{\infty}ar^k=\frac{a}{1-r}.
+\]
+
+\entry{Cauchy Criterion}
+\[
+\sum_{k=1}^{\infty}a_k\text{ converges}
+\Longleftrightarrow
+\forall\varepsilon>0,\ \exists N\in\mathbb N\text{ s.t.}
+\]
+\[
+\left|\sum_{k=m}^{n}a_k\right|<\varepsilon
+\qquad \forall n\ge m\ge N.
+\]
+
+\entry{Tail converges to 0}
+\[
+\sum_{k=1}^{\infty}a_k\text{ converges}
+\Longrightarrow
+\forall\varepsilon>0,\ \exists N\in\mathbb N\text{ s.t.}
+\]
+\[
+\left|\sum_{k=n}^{\infty}a_k\right|<\varepsilon\ \forall n\ge N,
+\qquad
+\sum_{k=n}^{\infty}a_k\to0\text{ as }n\to\infty.
+\]
+
+\entry{Convergence iff absolutely finite}
+\[
+a_k\ge0,\ \forall k\in\mathbb N.
+\]
+\[
+\sum_{k=1}^{\infty}a_k\text{ converges}
+\Longleftrightarrow
+\{S_n\}\text{ converges}
+\Longleftrightarrow
+\{S_n\}\text{ is bounded above.}
+\]
+
+\entry{$p$-series test}
+\[
+\sum_{k=1}^{\infty}\frac1{k^p}\text{ converges}
+\Longleftrightarrow p>1.
+\]
+
+\entry{Comparison test}
+\[
+0\le a_k\le b_k\text{ for large }k.
+\]
+\[
+\sum b_k\text{ conv}\Longrightarrow\sum a_k\text{ conv},
+\qquad
+\sum a_k\text{ div}\Longrightarrow\sum b_k\text{ div}.
+\]
+
+\entry{Limit Comparison Test}
+\[
+a_k\ge0,\ b_k>0\text{ for large }k,\qquad
+\lim_{k\to\infty}\frac{a_k}{b_k}=L.
+\]
+\[
+\text{i) }L>0:\quad \sum a_k\text{ conv}\Longleftrightarrow\sum b_k\text{ conv}.
+\]
+\[
+\text{ii) }L=0:\quad
+\sum b_k\text{ conv}\Longrightarrow\sum a_k\text{ conv},
+\quad
+\sum a_k\text{ div}\Longrightarrow\sum b_k\text{ div}.
+\]
+
+\entry{Abel's formula}
+\[
+\forall n\ge m\ge1,\qquad
+\sum_{k=m}^{n}a_kb_k
+=A_nb_n-A_{m-1}b_m+\sum_{k=m}^{n-1}A_k(b_k-b_{k+1}).
+\]
+
+\entry{Dirichlet test}
+\[
+\text{If }\{A_n\}\text{ is bounded and }b_k\to0,\text{ then }
+\sum_{k=1}^{\infty}a_kb_k\text{ converges.}
+\]
+
+\entry{Alternating series test}
+\[
+\text{If }b_k\ge0\text{ and }b_k\to0,\text{ then }
+\sum_{k=1}^{\infty}(-1)^kb_k\text{ converges.}
+\]
+
+\newpage
+
+\topic{Absolute Convergence}
+
+\entry{Absolute Convergence}
+\[
+\sum a_k\text{ converges absolutely}
+\Longleftrightarrow
+\sum |a_k|\text{ converges}
+\Longrightarrow
+\sum a_k\text{ converges.}
+\]
+\[
+\sum a_k\text{ converges conditionally}
+\Longleftrightarrow
+\sum |a_k|\text{ diverges and }\sum a_k\text{ converges.}
+\]
+
+\entry{Rearrangement}
+\[
+\sum_{j=1}^{\infty}b_j\text{ is a rearrangement of }\sum_{k=1}^{\infty}a_k
+\]
+\[
+\text{if }\exists\text{ a bijection }\phi:\mathbb N\to\mathbb N
+\text{ s.t. }a_k=b_{\phi(k)}.
+\]
+
+\entry{Rearrangement Thm}
+\[
+\text{If }\sum a_k\text{ converges absolutely, and }\sum b_j
+\text{ is any rearrangement of }\sum a_k,
+\]
+\[
+\text{then }\sum b_j=\sum a_k\text{ so it converges.}
+\]
+
+\entry{Limsup}
+\[
+\text{Let }\{x_n\}\text{ be a sequence in }\mathbb R,\ x\in\mathbb R.
+\]
+\[
+\text{i) }\lim x_n=x
+\Longleftrightarrow
+x_n<x\text{ for large }n.
+\]
+\[
+\text{ii) }\limsup x_n\le x
+\Longrightarrow
+x_n<x\text{ for infinitely many }n.
+\]
+\[
+\text{iii) }x_n\to x
+\Longrightarrow
+\limsup x_n=x.
+\]
+\[
+\text{iv) }x_n\to-\infty
+\Longrightarrow
+\limsup x_n=-\infty.
+\]
+\[
+\text{v) }x_n\to\infty
+\Longrightarrow
+\limsup x_n=\infty.
+\]
+
+\entry{Root test}
+\[
+\text{Let }r=\limsup_{k\to\infty}|a_k|^{1/k}\in\mathbb R\cup\{\infty\}.
+\]
+\[
+r<1\Longrightarrow\sum a_k\text{ conv abs},\qquad
+r>1\Longrightarrow\sum a_k\text{ div},\qquad
+r=1\Longrightarrow\text{inconclusive.}
+\]
+
+\entry{Ratio test}
+\[
+\text{If }a_k\ne0\text{ for large }k,\quad
+r=\limsup_{k\to\infty}\left|\frac{a_{k+1}}{a_k}\right|.
+\]
+\[
+r<1\Longrightarrow\sum a_k\text{ conv abs},
+\]
+\[
+\left|\frac{a_{k+1}}{a_k}\right|\ge1\text{ for large }k
+\Longrightarrow\sum a_k\text{ div}.
+\]
+\[
+\text{If }R=\lim\left|\frac{a_{k+1}}{a_k}\right|,\quad
+R<1\Longrightarrow\sum a_k\text{ conv abs},\quad
+R>1\Longrightarrow\sum a_k\text{ div},\quad
+R=1\Longrightarrow\text{inconclusive.}
+\]
+
+\newpage
+
+\topic{Uniform Convergence}
+
+\entry{Pointwise Convergence}
+\[
+\text{Let }E\ne\varnothing,\ f_n:E\to\mathbb R.
+\]
+\[
+\text{Say }f_n\to f\text{ pointwise on }E
+\]
+\[
+\text{if }\forall x\in E,\ \forall\varepsilon>0,\ \exists N\in\mathbb N
+\text{ s.t. }\forall n\ge N,\ |f_n(x)-f(x)|<\varepsilon.
+\]
+
+\entry{Uniform Convergence}
+\[
+\text{Say }f_n\to f\text{ uniformly on }E
+\]
+\[
+\text{if }\forall\varepsilon>0,\ \exists N\in\mathbb N
+\text{ s.t. }\forall n\ge N,\ |f_n(x)-f(x)|<\varepsilon\quad \forall x\in E.
+\]
+
+\entry{Uniform convergence lemma}
+\[
+\text{If }\exists a_n\in\mathbb R\text{ s.t. }|f_n(x)-f(x)|\le a_n
+\quad\forall x\in E,
+\]
+\[
+\text{and }a_n\to0,\text{ then }f_n\to f\text{ uniformly on }E.
+\]
+
+\entry{Uniform Convergence preserves boundedness}
+\[
+\text{If }f_n\to f\text{ uniformly on }E,\text{ each }f_n\text{ bounded on }E,
+\]
+\[
+\text{then }f\text{ is bounded on }E.
+\]
+
+\entry{Reverse Triangle Inequality}
+\[
+\big||x|-|y|\big|\le |x-y|,
+\qquad
+|x|+|y|\le |x-y|\quad\text{(as recorded).}
+\]
+
+\entry{Uniform convergence preserves continuity}
+\[
+\text{Let }\varnothing\ne E\subseteq\mathbb R,\ a\in E.
+\]
+\[
+\text{If }f_n\to f\text{ uniformly on }E,\text{ and each }f_n
+\text{ is continuous at }a,
+\]
+\[
+\text{then }f\text{ is continuous at }a.
+\]
+
+\entry{Uniform Cauchy Criterion}
+\[
+\{f_n\}\text{ converges uniformly on }E
+\Longleftrightarrow
+\{f_n\}\text{ is uniformly Cauchy on }E
+\]
+\[
+\Longleftrightarrow
+\forall\varepsilon>0,\ \exists N\in\mathbb N
+\text{ s.t. } |f_n(x)-f_m(x)|<\varepsilon
+\quad \forall n,m\ge N,\ \forall x\in E.
+\]
+
+\entry{Uniform convergence preserves integrals}
+\[
+\text{Let }a<b\text{ in }\mathbb R,\ f_n\to f\text{ uniformly on }[a,b].
+\]
+\[
+\text{If each }f_n\text{ is integrable, then }f\text{ is integrable on }[a,b],
+\]
+\[
+\int_a^b f_n\to\int_a^b f,
+\qquad
+\int_a^x f_n\to\int_a^x f
+\text{ uniformly for }x\in[a,b].
+\]
+
+\entry{Limit swapping}
+\[
+g_n\to g\text{ uniformly and each }g_n\text{ continuous at }c\in E
+\Longrightarrow g\text{ continuous at }c.
+\]
+\[
+\lim_{x\to c}\lim_{n\to\infty}g_n(x)
+=
+\lim_{n\to\infty}g_n(c)
+=
+\lim_{n\to\infty}\lim_{x\to c}g_n(x).
+\]
+
+\entry{Uniform convergence and differentiation}
+\[
+\text{Let }a<b,\text{ each }f_n\text{ diff'ble on }[a,b].
+\]
+\[
+\text{If }f_n'\text{ converges uniformly on }(a,b)
+\text{ and }f_n(x_0)\text{ converges for some }x_0\in(a,b),
+\]
+\[
+\text{then }f_n\text{ converges uniformly and }
+\left(\lim_{n\to\infty}f_n\right)'=\lim_{n\to\infty}f_n'
+\text{ on }(a,b).
+\]
+
+\entry{Weierstrass M-test}
+\[
+f_k:E\to\mathbb R,\quad \forall k\in\mathbb N,\quad
+\exists M_k\in\mathbb R\text{ s.t. }|f_k(x)|\le M_k\ \forall x\in E.
+\]
+\[
+\text{If }\sum_{k=1}^{\infty}M_k\text{ converges, then }
+\sum_{k=1}^{\infty}f_k\text{ converges absolutely and uniformly on }E.
+\]
+
+\entry{Swapping series}
+\[
+\text{If }\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_{ij}\text{ converges absolutely, then }
+\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_{ij}
+=
+\sum_{j=0}^{\infty}\sum_{i=0}^{\infty}a_{ij}.
+\]
+
+\newpage
+
+\topic{Power Series}
+
+\entry{Power series definition}
+\[
+\text{A power series centered at }x_0\in\mathbb R\text{ with radius of convergence }R
+\]
+\[
+f(x)=\sum_{k=0}^{\infty}a_k(x-x_0)^k,\qquad a_k\in\mathbb R.
+\]
+\[
+f(x)\text{ converges absolutely for }|x-x_0|<R,
+\quad
+f(x)\text{ diverges for }|x-x_0|>R.
+\]
+\[
+f(x)\text{ converges uniformly on }[a,b]\subset(x_0-R,x_0+R).
+\]
+\[
+R=\frac{1}{\limsup_{k\to\infty}|a_k|^{1/k}}
+\quad\text{or}\quad
+\frac{1}{|q|}=\lim_{k\to\infty}\left|\frac{a_k}{a_{k+1}}\right|
+\text{ when the limit exists.}
+\]
+
+\entry{Continuity}
+\[
+f\text{ is continuous on }(x_0-R,x_0+R)
+\text{ and on any }[a,b]\subset(x_0-R,x_0+R).
+\]
+
+\entry{Term by term differentiation}
+\[
+f'(x)=\sum_{k=1}^{\infty}ka_k(x-x_0)^{k-1},
+\qquad x\in(x_0-R,x_0+R).
+\]
+\[
+f\in C^\infty(x_0-R,x_0+R),\qquad f^{(n)}(x_0)=n!a_n.
+\]
+
+\entry{Abel's Thm}
+\[
+\text{If }f(x)\text{ converges at }x_0+R\text{ or }x_0-R,
+\]
+\[
+\text{then }f\text{ converges uniformly on }[x_0,x_0+R]
+\text{ or }[x_0-R,x_0],
+\]
+\[
+\text{and }f\text{ is continuous at the endpoint.}
+\]
+
+\entry{Term by term integration}
+\[
+\text{If }f\text{ converges on }[a,b],\text{ then }f\text{ is integrable on }[a,b]
+\]
+\[
+\text{and we have term by term integration.}
+\]
+
+\topic{Analytic Function}
+
+\entry{Multiplying Series Thm}
+\[
+\text{Let }a_k,b_k\in\mathbb R,\qquad
+c_k=\sum_{j=0}^{k}a_jb_{k-j}.
+\]
+\[
+\text{If }\sum a_k\text{ and }\sum b_k\text{ converge and one converges absolutely,}
+\]
+\[
+\text{then }\sum c_k=(\sum a_k)(\sum b_k)\text{ converges.}
+\]
+\[
+\text{If }\sum a_k,\sum b_k,\sum c_k\text{ converge on }(-R,R),
+\text{ then }\sum c_kx^k=(\sum a_kx^k)(\sum b_kx^k).
+\]
+
+\entry{Analytic function}
+\[
+\text{\red{Locally expressible as a power series.}}
+\]
+\[
+f\text{ is analytic on }(a,b)
+\Longrightarrow
+\forall x_0\in(a,b),\ \exists\text{ open interval }(c,d)\subset(a,b)
+\]
+\[
+f\in C^\infty(a,b)\text{ w/ }x_0\in(c,d)\text{ s.t.}
+\]
+\[
+f(x)=\sum_{k=0}^{\infty}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k,\qquad
+\forall x\in(c,d).
+\]
+
+\entry{Analytic M-test}
+\[
+\text{Let }f\in C^\infty(a,b),\text{ if }\exists M>0
+\text{ s.t. }|f^{(n)}(x)|\le M^n,\quad \forall x\in(a,b),\ \forall n\in\mathbb N,
+\]
+\[
+\Longrightarrow
+f\text{ is analytic on }(a,b).
+\]
+
+\entry{A power series is Analytic}
+\[
+\text{A power series is analytic on its interval of convergence }(-R,R).
+\]
+\[
+f(x)=\sum_{k=0}^{\infty}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
+\quad\text{for }x\text{ w/ }|x-x_0|<R-|x_0|.
+\]
+
+\entry{Identity Thm}
+\[
+\text{If }f\text{ and }g\text{ are analytic on }(a,b)
+\text{ and }f=g\text{ on }(c,d)\subset(a,b),
+\]
+\[
+\Longrightarrow f=g\text{ on }(a,b).
+\]
+
+\newpage
+
+\topic{Metric Spaces}
+
+\entry{Metric Definition}
+\[
+\text{Let }X\text{ be a set, }\rho:X\times X\to\mathbb R
+\text{ is a metric such that}
+\]
+\[
+\rho(x,y)\ge0,\quad
+\rho(x,y)=0\Longleftrightarrow x=y,\quad
+\rho(x,y)=\rho(y,x),
+\]
+\[
+\rho(x,y)\le\rho(x,z)+\rho(z,y).
+\]
+
+\entry{Open and closed balls}
+\[
+B_r(x)=\{y\in X:\rho(x,y)<r\},\qquad
+\overline B_r(x)=\{y\in X:\rho(x,y)\le r\}.
+\]
+
+\entry{Open and closed metric spaces}
+\[
+V\text{ is open in }X
+\Longleftrightarrow
+\forall x\in V,\ \exists\varepsilon>0\text{ s.t. }B_\varepsilon(x)\subseteq V.
+\]
+\[
+E\text{ is closed in }X
+\Longleftrightarrow
+E^c\text{ is open in }X.
+\]
+\[
+\text{Sequential characterization of closed sets: }
+\forall x_n\to x\text{ w/ each }x_n\in E\Longrightarrow x\in E.
+\]
+
+\entry{Completeness}
+\[
+\text{A metric space }(X,\rho)\text{ is complete if every Cauchy sequence converges in }(X,\rho).
+\]
+
+\entry{Sequential compact}
+\[
+E\text{ is sequentially compact}
+\Longleftrightarrow
+\text{every bounded sequence in }E\text{ has a subsequence converging in }E.
+\]
+
+\topic{Limit of Functions}
+
+\entry{Cluster point}
+\[
+\text{Let }(X,\rho)\text{ be a metric space, }E\subseteq X,\ a\in X.
+\]
+\[
+a\text{ is a cluster point of }E
+\Longleftrightarrow
+\forall\delta>0,\ B_\delta(a)\cap E
+\text{ contains infinitely many points}
+\]
+\[
+\Longleftrightarrow
+\forall\delta>0,\ B_\delta(a)\cap E\setminus\{a\}\ne\varnothing
+\]
+\[
+\Longleftrightarrow
+\exists\text{ sequence }\{x_n\}\text{ in }E\setminus\{a\}
+\text{ s.t. }x_n\to a.
+\]
+
+\entry{Continuity}
+\[
+E\subseteq X,\quad f:E\to Y.
+\]
+\[
+f\text{ is continuous at }a\in E
+\Longleftrightarrow
+\forall\varepsilon>0,\ \exists\delta>0\text{ s.t. }
+\tau(f(x),f(a))<\varepsilon
+\quad \forall x\in E\text{ w/ }\rho(x,a)<\delta.
+\]
+
+\entry{SCL}
+\[
+\lim_{x\to a}f(x)=L
+\Longleftrightarrow
+\forall\text{ sequences }x_n\text{ w/ each }x_n\in E
+\text{ s.t. }x_n\to a,\ f(x_n)\to L.
+\]
+
+\entry{SCC}
+\[
+f\text{ is continuous at }a\in E
+\Longleftrightarrow
+\forall\text{ sequences }x_n\text{ w/ each }x_n\in E,\ x_n\to a,\text{ then }f(x_n)\to f(a).
+\]
+
+\entry{Continuous functions}
+\[
+\text{The coordinate function }\mathbb R^n\to\mathbb R,\quad
+x=(x_1,\ldots,x_n)\mapsto x_j\text{ is continuous.}
+\]
+\[
+\text{Polynomials are continuous on }\mathbb R^n,\quad
+\text{every rational of polynomial is continuous on }\mathbb R^n.
+\]
+\[
+\text{Composite of continuous functions are continuous.}
+\]
+
+\topic{Interior, Closure, Boundary}
+
+\entry{Set union and intersection}
+\[
+\text{Let }(X,\rho)\text{ be a metric space, }A\text{ be an index set.}
+\]
+\[
+\text{Each }V_\alpha\text{ is open in }X\Longrightarrow\bigcup_{\alpha\in A}V_\alpha
+\text{ is open.}
+\]
+\[
+\text{Each }V_k\text{ is open in }X,\ k=1,\ldots,n
+\Longrightarrow\bigcap_{k=1}^{n}V_k\text{ is open.}
+\]
+\[
+\text{Each }E_\alpha\text{ is closed in }X\Longrightarrow\bigcap_{\alpha\in A}E_\alpha
+\text{ is closed.}
+\]
+\[
+\text{Each }E_k\text{ is closed in }X,\ k=1,\ldots,n
+\Longrightarrow\bigcup_{k=1}^{n}E_k\text{ is closed.}
+\]
+
+\entry{Interior, Closure, Boundary}
+\[
+\operatorname{int}E
+=\{x\in E:\exists\varepsilon>0\text{ s.t. }B_\varepsilon(x)\subseteq E\}.
+\]
+\[
+\text{Closure: }x\in\overline E
+\Longleftrightarrow
+\forall r>0,\ B_r(x)\cap E\ne\varnothing
+\Longleftrightarrow
+x\text{ is a limit point or }x\in E.
+\]
+\[
+\text{Boundary: }x\in\partial E
+\Longleftrightarrow
+\forall r>0,\ B_r(x)\cap E\ne\varnothing
+\text{ and }B_r(x)\cap E^c\ne\varnothing.
+\]
+\[
+E^\circ\text{ is open},\quad \overline E\text{ is closed},\quad
+\partial E\text{ is closed},\quad
+\overline E=E^\circ\cup\partial E.
+\]
+
+\entry{Closure}
+\[
+A\subseteq B\Longrightarrow \overline A\subseteq\overline B.
+\]
+\[
+\overline E\text{ is closed},\qquad
+F\text{ is closed and }E\subseteq F\Longrightarrow \overline E\subseteq F.
+\]
+\[
+\overline E=\bigcap\{F:F\text{ is closed and }E\subseteq F\}.
+\]
+\[
+\overline{A\cup B}=\overline A\cup\overline B,\qquad
+\overline{A\cap B}\subseteq\overline A\cap\overline B.
+\]
+
+\entry{Duality and Boundary}
+\[
+(\overline E)^c=(E^c)^\circ,\qquad (E^\circ)^c=\overline{E^c}.
+\]
+\[
+\partial E=\overline E\cap\overline{E^c}= \overline E\setminus E^\circ.
+\]
+
+\end{document}

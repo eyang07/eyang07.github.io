@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage{assets/tex/notes/eric-notes-style}
+
+\begin{document}
+
+\notetitle{MATH 320-1: Final Notes}{Real Analysis I}
+
+\topic{Taylor Polynomial}
+
+\entry{Taylor Polynomial}
+\[
+\text{Let }f\text{ be }n\text{ times differentiable at }a.
+\]
+\[
+\text{Define }n\text{th polynomial of }f\text{ centered at }a\text{ to be}
+\qquad
+P_n(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k.
+\]
+\[
+\text{and the }n\text{th Taylor remainder to be }\quad
+R_n(x)=f(x)-P_n(x).
+\]
+\[
+\text{\redstar\ Condition: function can be approximated by polynomial.}
+\]
+
+\entry{Taylor's Thm}
+\[
+\text{Let }f:[a,b]\to\mathbb R\text{ be }n\text{th time differentiable, where }
+-\infty<a<b<\infty,\ n\in\mathbb N\cup\{0\}.
+\]
+\[
+\text{Then }\forall x,x_0\in(a,b),\ \exists c\text{ between }x\text{ and }x_0
+\text{ s.t.}
+\]
+\[
+f(x)=f(x_0)+\sum_{k=1}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k
+\;+\;
+\frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}.
+\]
+\[
+\text{nth degree polynomial of }f\text{ centered at }x_0
+\qquad
+\text{nth Taylor polynomial remainder.}
+\]
+
+\topic{Partitions}
+
+\entry{Partition definition}
+\[
+\text{i) A partition of }[a,b]\text{ is a finite set of points}
+\]
+\[
+P=\{x_0,x_1,\ldots,x_n\}\text{ s.t. }a=x_0<x_1<x_2<\cdots<x_n=b.
+\]
+\[
+\text{ii) Let }f:[a,b]\to\mathbb R\text{ be bounded.}
+\quad P=\{x_0,x_1,\ldots,x_n\}\text{ is a partition of }[a,b].
+\]
+\[
+\text{Define the upper sum and lower sum as}
+\]
+\[
+U(f,P)=\sum_{k=1}^{n}\sup_{x\in[x_{k-1},x_k]}f(x)(x_k-x_{k-1}),
+\]
+\[
+L(f,P)=\sum_{k=1}^{n}\inf_{x\in[x_{k-1},x_k]}f(x)(x_k-x_{k-1}).
+\]
+\[
+\text{Note: }L(f,P)\le U(f,P).
+\]
+\[
+\text{Let }P,Q\text{ be partitions of }[a,b].
+\text{ If }Q\text{ is a refinement of }P,
+\]
+\[
+L(f,P)\le L(f,Q)\le U(f,Q)\le U(f,P).
+\]
+
+\newpage
+
+\topic{Integration}
+
+\entry{Notation}
+\[
+\text{Let }f:[a,b]\to\mathbb R\text{ be a bounded function, }a<b\text{ in }\mathbb R.
+\]
+\[
+\text{Let }P\text{ be the collection of all partitions of }[a,b].
+\]
+
+\entry{Lower and upper integrals}
+\[
+L(f,S)\le u(f,Q)\qquad \forall S,Q\in P.
+\]
+\[
+\sup_{S\in P}L(f,S)\le \inf_{Q\in P}U(f,Q).
+\]
+\[
+\text{i) The upper integral of }f\text{ on }[a,b]\text{ is }
+\overline{\int_a^b} f(x)\,dx=\inf_{P\in P}U(f,P).
+\]
+\[
+\text{ii) The lower integral of }f\text{ on }[a,b]\text{ is }
+\underline{\int_a^b} f(x)\,dx=\sup_{P\in P}L(f,P).
+\]
+\[
+\text{Note: }\underline{\int_a^b}f\le \overline{\int_a^b}f.
+\]
+\[
+\text{iii) Say the function }f\text{ is integrable on }[a,b]\text{ if }
+\underline{\int_a^b}f=\overline{\int_a^b}f=\int_a^b f.
+\]
+
+\entry{Comparison Thm for integrals}
+\[
+\text{Let }f,g\text{ be integrable on }[a,b],\text{ where }a<b\text{ in }\mathbb R.
+\]
+\[
+\text{If }f(x)\le g(x),\ \forall x\in[a,b],
+\text{ then }\int_a^b f\le\int_a^b g.
+\]
+\[
+\text{In particular, if }m\le f(x)\le M,\ \forall x\in[a,b],
+\]
+\[
+\text{then }m(b-a)\le\int_a^b f\le M(b-a).
+\]
+
+\entry{Approximation characterization of Integrability}
+\[
+\text{Let }f:[a,b]\to\mathbb R\text{ be bounded, with }a<b\text{ in }\mathbb R,
+\]
+\[
+\text{and }P\text{ be the set of all possible partitions of }[a,b].
+\]
+\[
+f\text{ is integrable on }[a,b]
+\Longleftrightarrow
+\forall\varepsilon>0,\ \exists P_\varepsilon\in P
+\text{ s.t. } U(f,P_\varepsilon)-L(f,P_\varepsilon)<\varepsilon.
+\]
+
+\newpage
+
+\entry{Integrability of continuous functions}
+\[
+\text{Let }f:[a,b]\to\mathbb R\text{ be continuous, where }a<b\text{ in }\mathbb R,
+\text{ then }f\text{ is integrable on }[a,b].
+\]
+
+\entry{Domain splitting}
+\[
+\text{Let }f:[a,b]\to\mathbb R\text{ be bounded, where }a<b,\ c\in(a,b).
+\]
+\[
+f\text{ is integrable on }[a,b]
+\Longleftrightarrow
+f\text{ is integrable on }[a,c]\text{ and }[c,b].
+\]
+
+\entry{Domain restriction}
+\[
+\text{If }f\text{ is integrable on }[a,b],
+\text{ then it is integrable on }[c,d]\quad \forall c<d\text{ in }[a,b].
+\]
+
+\entry{Endpoint don't matter}
+\[
+\text{Let }f:[a,b]\to\mathbb R\text{ be integrable where }a<b\text{ in }\mathbb R.
+\]
+\[
+\text{If }g:[a,b]\to\mathbb R\text{ satisfies }g(x)=f(x)\ \forall x\in(a,b),
+\]
+\[
+\text{then }g\text{ is integrable on }[a,b]\text{ and }\int_a^b f=\int_a^b g.
+\]
+
+\entry{Finitely many points don't matter}
+\[
+\text{i) Let }f:[a,b]\to\mathbb R\text{ be integrable where }a<b.
+\]
+\[
+\text{If }g:[a,b]\to\mathbb R\text{ satisfies }g(x)=f(x)\text{ for all but finitely many }x\in[a,b],
+\]
+\[
+\text{then }g\text{ is integrable on }[a,b],\text{ and }\int_a^b f=\int_a^b g.
+\]
+\[
+\text{ii) Let }f:[a,b]\to\mathbb R\text{ be bounded on }[a,b]\text{ and continuous at all but finitely many points,}
+\]
+\[
+\text{then }f\text{ is integrable on }[a,b].
+\]
+
+\newpage
+
+\topic{FTC}
+
+\entry{Fundamental Theorem of Calculus}
+\[
+f:[a,b]\to\mathbb R.
+\]
+\[
+\text{i) If }f\text{ is continuous on }[a,b]\text{ and }F(x)=\int_a^x f(t)\,dt,
+\]
+\[
+\Longrightarrow F\in C^1([a,b]),\qquad
+\frac{d}{dx}\left(\int_a^x f(t)\,dt\right)=F'(x)=f(x)
+\text{ for each }x\in[a,b].
+\]
+\[
+\text{ii) If }f\text{ is differentiable on }[a,b]\text{ and }f'
+\text{ is integrable on }[a,b],
+\]
+\[
+\Longrightarrow
+\int_a^x f'(t)\,dt=f(x)-f(a)
+\text{ for each }x\in[a,b].
+\]
+
+\end{document}

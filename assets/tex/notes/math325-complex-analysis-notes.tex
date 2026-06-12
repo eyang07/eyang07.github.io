@@ -1,0 +1,497 @@
+\documentclass[11pt]{article}
+\usepackage{assets/tex/notes/eric-notes-style}
+
+\begin{document}
+
+\notetitle{MATH 325: Complex Analysis Notes}{Midterm and Final Review}
+
+\topic{Complex Numbers and Functions}
+
+\entry{Complex number}
+\[
+\operatorname{Re} z=\frac{z+\overline z}{2},\qquad
+\operatorname{Im} z=\frac{z-\overline z}{2i},\qquad
+|z|^2=z\overline z.
+\]
+\[
+\text{Euler's formula: } e^{i\theta}=\cos\theta+i\sin\theta \quad (\theta\in\mathbb R).
+\]
+\[
+i^n=\begin{cases}
+1, & n\equiv0\pmod4,\\
+i, & n\equiv1\pmod4,\\
+-1, & n\equiv2\pmod4,\\
+-i, & n\equiv3\pmod4.
+\end{cases}
+\]
+
+\entry{De Moivre's formula}
+\[
+\forall n\in\mathbb N,\qquad
+(\cos\theta+i\sin\theta)^n=e^{in\theta}=\cos(n\theta)+i\sin(n\theta).
+\]
+
+\entry{Roots of unity}
+\[
+\text{For the } n\text{th roots of unity }z^n=1,\ z_k\in\mathbb C,
+\]
+\[
+z_k=\exp\left(\frac{2\pi i k}{n}\right),\qquad k=0,1,\ldots,n-1.
+\]
+
+\entry{Complex exponential}
+\[
+\exp:\mathbb C\to\mathbb C,\qquad e^z=e^x(\cos y+i\sin y).
+\]
+
+\entry{Complex logarithm}
+\[
+\log z=\ln |z|+i\arg z.
+\]
+
+\entry{Complex powers}
+\[
+z^\alpha=e^{\alpha\log z}=e^{\alpha(\ln|z|+i\arg z)}.
+\]
+\[
+a\in\mathbb R,\ a\ne0,\ n\in\mathbb Z,\quad \text{then }z^a
+\text{ takes a distinct values.}
+\]
+\[
+a\in\mathbb C \text{ and } a\notin\mathbb Z,\quad \text{then }z^a
+\text{ takes infinitely many distinct values.}
+\]
+
+\entry{Trigonometric and hyperbolic functions}
+\[
+\cos z=\frac{e^{iz}+e^{-iz}}{2},\qquad
+\sin z=\frac{e^{iz}-e^{-iz}}{2i}.
+\]
+\[
+\cosh z=\frac{e^z+e^{-z}}{2},\qquad
+\sinh z=\frac{e^z-e^{-z}}{2}.
+\]
+
+\entry{Images of exp}
+\[
+\text{Let } x=x_0 \text{ be constant: } e^z=e^x(\cos y+i\sin y),
+\quad y\in\mathbb R.
+\]
+\[
+\text{The image is a circle w/ radius } e^{x_0}.
+\]
+\[
+\text{Let } y=y_0 \text{ be constant: } e^z=e^x(\cos y_0+i\sin y_0),
+\quad x\in\mathbb R.
+\]
+\[
+\text{The image is a ray w/ angle }y_0.
+\]
+
+\entry{Images of log}
+\[
+\log z \text{ transforms circles into vertical lines}
+\quad\text{and}\quad
+\text{rays into horizontal lines.}
+\]
+
+\topic{Complex Differentiation}
+
+\entry{Analytic}
+\[
+f:U\to\mathbb C \text{ is analytic on an open }U\subseteq\mathbb C
+\]
+\[
+\text{if } f \text{ is diff'ble } \forall u\in U
+\text{ and } f' \text{ is continuous } \forall u\in U.
+\]
+
+\entry{Goursat's Thm}
+\[
+\text{If } f \text{ is diff'ble at every point of }D,\text{ then }f
+\text{ is continuous on }D.
+\]
+
+\entry{Cauchy-Riemann Equations}
+\[
+f(z)=u+iv \text{ on }D\subseteq\mathbb C.
+\]
+\[
+f \text{ is diff'ble at } z
+\Longleftrightarrow
+\text{C-R equations hold at }z:
+\qquad u_x=v_y,\quad u_y=-v_x.
+\]
+\[
+\Longleftrightarrow \text{the partials }u,v\text{ exist and are continuous on }\mathbb C.
+\]
+
+\entry{Constancy Thm}
+\[
+\text{Suppose }f\text{ is analytic on domain }D\subseteq\mathbb C.
+\]
+\[
+(f'(z)=0\ \forall z\in D)\quad\text{or}\quad(|f(z)|\in\mathbb R\ \forall z\in D)
+\quad\text{or}\quad(f,\overline f\text{ analytic on }D)
+\]
+\[
+\Longrightarrow f \text{ is constant on }D.
+\]
+
+\newpage
+
+\topic{Harmonic Functions}
+
+\entry{Harmonic function}
+\[
+\text{Let }u:D\subseteq\mathbb R^2\to\mathbb R\text{ s.t. }u\in C^2.
+\]
+\[
+\text{Say }u\text{ is harmonic on }D\text{ if }u_{xx}+u_{yy}=0\text{ on }D.
+\]
+
+\entry{Harmonic and Analytic Thm}
+\[
+\text{If }u+iv\text{ is analytic on }D,\text{ then }u\text{ and }v
+\text{ are harmonic on }D.
+\]
+
+\entry{Harmonic Conjugate}
+\[
+\text{Let }u:D\subseteq\mathbb R^2\to\mathbb R\text{ be harmonic.}
+\]
+\[
+\text{The harmonic conjugate }v:D\to\mathbb R
+\text{ is a harmonic function for which }f=u+iv
+\text{ is analytic on }D.
+\]
+
+\entry{Maybe tested: Existence Thm}
+\[
+\text{Let }u\text{ be harmonic on }D.\text{ If }D\text{ is simply connected,}
+\]
+\[
+\text{then }\exists\text{ a harmonic conjugate }v\text{ on }D.
+\]
+
+\entry{Polygonally-connected}
+\[
+E\subseteq\mathbb C\text{ is polygonally-connected if any two points in }E
+\]
+\[
+\text{can be connected by a sequence of line segments lying inside the set.}
+\]
+
+\entry{Simply connected}
+\[
+\text{A polygonally-connected region }D\text{ is simply-connected if}
+\]
+\[
+\text{the region enclosed by any simple closed curve is contained in }D.
+\]
+
+\entry{Green's Thm}
+\[
+\text{If }D\subseteq\mathbb R^2\text{ is a bounded region with positively oriented boundary }\partial D,
+\]
+\[
+\oint_{\partial D} P\,dx+Q\,dy
+=
+\iint_D (Q_x-P_y)\,dA.
+\]
+
+\newpage
+
+\topic{Complex Integration}
+
+\entry{Line Integrals}
+\[
+\text{Scalar line integral: }\quad
+\int_\gamma f(x,y)\,ds
+=
+\int_a^b f(\gamma(t))\|\gamma'(t)\|\,dt.
+\]
+\[
+\text{Vector line integral: }\quad
+\int_\gamma \vec F\cdot d\vec r
+=
+\int_a^b F(\gamma(t))\cdot \gamma'(t)\,dt.
+\]
+\[
+\text{Complex line integral: }\quad
+\int_\gamma f(z)\,dz
+=
+\int_a^b f(\gamma(t))\gamma'(t)\,dt.
+\]
+
+\entry{ML estimate}
+\[
+\text{Let }\gamma\text{ be piecewise smooth, }f\text{ continuous on }\gamma.
+\]
+\[
+\left|\int_\gamma f(z)\,dz\right|
+\le
+\int_\gamma |f(z)|\,|dz|.
+\]
+\[
+\text{If }L=\ell(\gamma),\ |f(z)|\le M\text{ on }\gamma,\text{ then }
+\left|\int_\gamma f(z)\,dz\right|\le ML.
+\]
+
+\entry{FTC}
+\[
+\text{I: Let }f\text{ be continuous on }D\subseteq\mathbb C,\quad F'(z)=f(z)\text{ on }D.
+\]
+\[
+\text{Then for }\gamma\text{ w/ }\gamma(a)=A,\ \gamma(b)=B,\quad
+\int_\gamma f(z)\,dz=\int_A^B f(z)\,dz=F(B)-F(A).
+\]
+\[
+\text{II: Let }D\subseteq\mathbb C\text{ be simply connected, }f\text{ analytic on }D.
+\]
+\[
+\text{Then }f\text{ has a primitive }F\text{ on }D,\qquad
+F(z)=\int_{z_0}^z f(w)\,dw.
+\]
+
+\entry{Cauchy's Thm}
+\[
+\text{Let }D\text{ be a bounded domain with }\partial D
+\text{ a finite number of disjoint contours.}
+\]
+\[
+\text{If }f\text{ is analytic on }\partial D\cup D,\text{ then }
+\int_{\partial D} f(z)\,dz=0.
+\]
+
+\entry{Morera's Thm}
+\[
+\text{Let }f\text{ be continuous on a domain }D.
+\]
+\[
+\text{If }\int_c f(z)\,dz=0\text{ for every closed rectangle, contour, triangle in }D,
+\]
+\[
+\text{then }f\text{ is analytic on }D.
+\]
+
+\entry{Cauchy Integral Formula}
+\[
+\text{Let }D\text{ be bounded w/ }\partial D\text{ a contour; if }f
+\text{ is analytic on }\partial D\cup D,
+\]
+\[
+\text{then } f(z_0)=\frac{1}{2\pi i}\int_{\partial D}\frac{f(z)}{z-z_0}\,dz,
+\qquad z_0\in D.
+\]
+\[
+\text{Generalized formula: }\quad
+f^{(m)}(z_0)=\frac{m!}{2\pi i}\int_{\partial D}
+\frac{f(z)}{(z-z_0)^{m+1}}\,dz,\qquad z_0\in D,\ m\ge0.
+\]
+
+\entry{Cauchy's Estimates}
+\[
+\text{Suppose }f\text{ is analytic for }|z-z_0|\le \rho.
+\]
+\[
+\text{If }\exists M>0\text{ s.t. }|f(z)|\le M\ \forall z
+\text{ w/ }|z-z_0|\le\rho,
+\]
+\[
+\text{then }\left|f^{(m)}(z_0)\right|\le \frac{m!}{\rho^m}M.
+\]
+
+\entry{Liouville's Thm}
+\[
+\text{If }f(z)\text{ is entire and bounded, then }f(z)\text{ is constant.}
+\]
+
+\newpage
+
+\topic{Complex Series}
+
+\entry{Series convergence}
+\[
+\sum_{n=0}^{\infty}a_n\text{ conv}
+\Longleftrightarrow
+\lim_{N\to\infty}s_N=\lim_{N\to\infty}\sum_{n=0}^{N}a_n
+\text{ converges.}
+\]
+
+\entry{Uniform convergence and analyticity}
+\[
+\text{If }f_n\to f\text{ uniformly on }D
+\text{ and each }f_n\text{ is analytic on }D,
+\]
+\[
+\text{then }f\text{ is analytic on }D.
+\]
+
+\entry{Taylor's Thm}
+\[
+\text{Suppose }f(z)\text{ is analytic for }|z-z_0|<R.
+\]
+\[
+f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n,\qquad
+|z-z_0|<R,\qquad
+a_n=\frac{f^{(n)}(z_0)}{n!}.
+\]
+\[
+\text{Power series for }R<\infty:
+\quad
+\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|=R
+\quad\text{or}\quad
+\lim_{n\to\infty}\sqrt[n]{|a_n|}=\frac1R.
+\]
+
+\entry{Uniqueness principle}
+\[
+\text{If }f,g\text{ analytic on }D\text{ and }f(z)=g(z)
+\text{ for all }z\in E,\text{ where }E\subseteq D
+\]
+\[
+\text{contains a nonisolated point, then }f(z)=g(z)\quad \forall z\in D.
+\]
+
+\entry{Weierstrass M-test}
+\[
+\text{Suppose }M_n\ge0\text{ and }\sum M_n\text{ converges.}
+\]
+\[
+\text{If }|g_n(z)|\le M_n\ \forall z\in E,\ \forall n\in\mathbb N,
+\text{ then }\sum_{n=1}^{\infty}g_n(z)
+\text{ conv unif and abs on }E.
+\]
+
+\entry{Cauchy product formula}
+\[
+\left(\sum a_nz^n\right)\left(\sum b_nz^n\right)
+=
+\sum c_nz^n,\qquad
+c_n=\sum_{j=0}^n a_jb_{n-j}.
+\]
+
+\topic{Zeros and Singularities}
+
+\entry{Zeros of function}
+\[
+\text{Suppose }f\text{ is analytic and }f\ne0\text{ on }D.
+\]
+\[
+a\text{ zero of }f,\quad f(z)=(z-a)^nh(z)
+\text{ for }h(a)\ne0.
+\]
+\[
+a\text{ zero has order }n\text{ if }f(a)=\cdots=f^{(n-1)}(a)=0
+\text{ and }f^{(n)}(a)\ne0.
+\]
+
+\entry{Laurent series}
+\[
+\text{If }f\text{ is analytic on annulus }\rho<|z-z_0|<R,
+\]
+\[
+f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n.
+\]
+\[
+\text{Analytic part: }\sum_{n=0}^{\infty}a_n(z-z_0)^n,\qquad
+\text{principal part: }\sum_{n=-\infty}^{-1}a_n(z-z_0)^n.
+\]
+
+\entry{Isolated Singularities}
+\[
+z_0\text{ is an isolated singularity of }f
+\text{ if }f\text{ is analytic on }D(z_0,r)\setminus\{z_0\}.
+\]
+\[
+\text{Removable: }\lim_{z\to z_0}f(z)\text{ exists.}
+\]
+\[
+\text{Pole of order }N:\quad f(z)=\frac{\phi(z)}{(z-z_0)^N},
+\quad \phi\text{ analytic and }\phi(z_0)\ne0.
+\]
+\[
+\text{Essential: not removable and not pole; Laurent principal part has infinitely many terms.}
+\]
+
+\entry{Quotient-pole lemma}
+\[
+\text{Suppose }f,g\text{ analytic in some disk centered at }z_0.
+\]
+\[
+\text{If }f\text{ has a zero of order }m\text{ at }z_0
+\text{ and }g\text{ has a zero of order }n\text{ at }z_0,
+\]
+\[
+\frac{f(z)}{g(z)}\text{ has a removable singularity if }m\ge n,
+\quad
+\text{and a pole of order }n-m\text{ if }m<n.
+\]
+
+\newpage
+
+\topic{Residue}
+
+\entry{Residue}
+\[
+\text{Suppose }f\text{ has Laurent series expansion }
+f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n
+\text{ on }0<|z-z_0|<R.
+\]
+\[
+\operatorname{Res}(f,z_0)=a_{-1}
+=
+\frac{1}{2\pi i}\int_\gamma f(z)\,dz.
+\]
+
+\entry{Residue Thm}
+\[
+\text{Let }D\text{ be a domain w/ piecewise smooth boundary }\partial D.
+\]
+\[
+\text{Suppose }f\text{ is analytic on }D\cup\partial D
+\text{ except at finite isolated singularities }z_1,\ldots,z_n,
+\]
+\[
+\text{then }\int_{\partial D}f(z)\,dz
+=2\pi i\sum_{j=1}^{n}\operatorname{Res}(f,z_j).
+\]
+
+\entry{Rules of Residue}
+\[
+\text{Rule 0: If }f\text{ has a removable singularity at }z_0,\text{ then }\operatorname{Res}(f,z_0)=0.
+\]
+\[
+\text{Rule 1: If }f\text{ has a pole of order }1\text{ at }z_0,\text{ then }
+\operatorname{Res}(f,z_0)=\lim_{z\to z_0}(z-z_0)f(z).
+\]
+\[
+\text{Rule 2: If }f\text{ has a pole of order }N\text{ at }z_0,\text{ then }
+\operatorname{Res}(f,z_0)=\lim_{z\to z_0}
+\frac{1}{(N-1)!}\frac{d^{N-1}}{dz^{N-1}}\bigl((z-z_0)^Nf(z)\bigr).
+\]
+\[
+\text{Rule 3: If }f,g\text{ are both analytic near }z_0
+\text{ and }g\text{ has a simple zero at }z_0,
+\]
+\[
+\text{then }\operatorname{Res}\left(\frac{f}{g},z_0\right)=\frac{f(z_0)}{g'(z_0)}.
+\]
+
+\entry{Application of Residue}
+\[
+\text{For }\int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\,dx
+\text{ where }P,Q\text{ are polynomial and }\deg Q\ge \deg P+2,
+\]
+\[
+\text{then }\int_{\partial D_R}\frac{P(z)}{Q(z)}\,dz
+=
+\int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx
+\;+\;\int_{\Gamma_R}\frac{P(z)}{Q(z)}\,dz.
+\]
+\[
+\text{Evaluate by Residue Thm; arc integral goes to }0\text{ by ML estimate.}
+\]
+
+\end{document}
