@@ -1,0 +1,658 @@
+\documentclass[11pt]{article}
+\usepackage{assets/tex/notes/eric-notes-style}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\begin{document}
+
+\notetitle{MATH 320-3: Real Analysis III Notes}{Topology, Differentiability, and Measure}
+
+\topic{Compactness}
+
+\entry{Covers}
+\[
+\text{Let }E\subseteq X.
+\]
+\[
+\text{An open cover of }E\text{ is }\mathcal V=\{V_\alpha:\alpha\in A\}
+\text{ of open sets }V_\alpha\text{ in }X
+\]
+\[
+\text{such that }E\subseteq \bigcup_{\alpha\in A}V_\alpha.
+\]
+\[
+\mathcal V\text{ has a finite subcover if }\exists\text{ a finite set }A_0\subseteq A
+\text{ such that }E\subseteq\bigcup_{\alpha\in A_0}V_\alpha.
+\]
+
+\entry{Compactness}
+\[
+E\text{ is compact}\Longleftrightarrow
+\text{every open cover of }E\text{ has a finite subcover.}
+\]
+
+\entry{Compact iff sequentially compact}
+\[
+\text{In a metric space }X,\ E\subseteq X,\qquad
+E\text{ is compact}\Longleftrightarrow E\text{ is sequentially compact.}
+\]
+
+\entry{Heine-Borel}
+\[
+\text{In a metric space }X\text{ with the Bolzano-Weierstrass property, }E\subseteq X,
+\]
+\[
+E\text{ is compact}\Longleftrightarrow E\text{ is closed and bounded.}
+\]
+
+\entry{Uniform Continuity}
+\[
+f\text{ continuous on compact }E
+\Longrightarrow f\text{ is uniformly continuous on }E.
+\]
+
+\entry{Continuity preserves compactness}
+\[
+f\text{ is continuous on compact }E
+\Longrightarrow f(E)\text{ is compact in }Y.
+\]
+
+\entry{Continuity and pre-image}
+\[
+f\text{ is continuous on }E
+\Longleftrightarrow f^{-1}(U)\text{ is open in }E,\quad \forall U\text{ open in }Y,
+\]
+\[
+\Longleftrightarrow f^{-1}(B)\text{ is closed in }E,\quad \forall B\text{ closed in }Y.
+\]
+
+\entry{Extreme Value Theorem}
+\[
+\varnothing\ne E\text{ compact},\qquad f:E\to\R\text{ continuous}
+\]
+\[
+\Longrightarrow
+\exists x_{\min},x_{\max}\in E
+\text{ such that }f(x_{\min})=\min_E f,\quad f(x_{\max})=\max_E f.
+\]
+
+\entry{Continuity of inverse function}
+\[
+f\text{ continuous on compact }E,\ f\text{ one-to-one}
+\Longrightarrow f^{-1}\text{ is continuous.}
+\]
+
+\entry{Images and pre-images}
+\[
+\text{Let }X,Y\text{ be sets and }f:X\to Y.
+\]
+\[
+f\left(\bigcup_{\alpha\in A}E_\alpha\right)=\bigcup_{\alpha\in A}f(E_\alpha),
+\qquad
+f\left(\bigcap_{\alpha\in A}E_\alpha\right)\subseteq\bigcap_{\alpha\in A}f(E_\alpha).
+\]
+\[
+f^{-1}\left(\bigcup_{\alpha\in A}B_\alpha\right)=\bigcup_{\alpha\in A}f^{-1}(B_\alpha),
+\qquad
+f^{-1}\left(\bigcap_{\alpha\in A}B_\alpha\right)=\bigcap_{\alpha\in A}f^{-1}(B_\alpha).
+\]
+\[
+f(A\cap B)=f(A)\cap f(B)\text{ when }f\text{ is one-to-one.}
+\]
+
+\entry{Dense and separable}
+\[
+\text{Let }E\subseteq X.
+\]
+\[
+E\text{ is dense in }X\Longleftrightarrow
+\overline E=X
+\Longleftrightarrow
+\forall x\in X,\ \forall\text{ open }V\ni x,\ V\cap E\ne\varnothing.
+\]
+\[
+X\text{ is separable if it has a countable dense subset.}
+\]
+
+\entry{Lindelof's Theorem}
+\[
+\text{Let }X\text{ be separable and }E\subseteq X.
+\]
+\[
+\text{Every open cover }\{V_\alpha:\alpha\in A\}\text{ of }E
+\text{ has a countable subcover.}
+\]
+
+\entry{Subspace topology}
+\[
+\text{Let }X\text{ be a metric space, }E\subseteq X,\ U,A\subseteq E.
+\]
+\[
+U\text{ is open in }E
+\Longleftrightarrow \exists\text{ an open set }V\text{ in }X\text{ such that }U=V\cap E.
+\]
+\[
+A\text{ is closed in }E
+\Longleftrightarrow \exists\text{ a closed set }B\text{ in }X\text{ such that }A=B\cap E.
+\]
+
+\newpage
+
+\topic{Connectedness}
+
+\entry{Disconnected and connected}
+\[
+\text{Let }(X,\rho)\text{ be a metric space, }E\subseteq X.
+\]
+\[
+E\text{ is disconnected if }\exists\text{ nonempty disjoint sets }U,V\text{ open in }E
+\text{ such that }E=U\cup V.
+\]
+\[
+E\text{ is connected if it is not disconnected.}
+\]
+\[
+\text{i.e. if }E=U\cup V,\ U,V\text{ disjoint and open in }E,\text{ then }U=\varnothing\text{ or }V=\varnothing.
+\]
+
+\entry{Open and closed in connected set}
+\[
+E\text{ is connected}\Longleftrightarrow
+\varnothing\text{ and }E\text{ are the only subsets of }E\text{ that are both open and closed in }E.
+\]
+
+\entry{Intervals are connected}
+\[
+\text{In }(\R,d),\quad
+E\text{ is connected}\Longleftrightarrow
+E\text{ is an interval }(a,b),[a,b],(a,b],[a,b)
+\]
+\[
+\text{or }E\text{ is a single point.}
+\]
+
+\entry{Continuity preserves connectedness}
+\[
+f\text{ continuous on connected }E
+\Longrightarrow f(E)\text{ is connected.}
+\]
+
+\entry{Intermediate Value Theorem}
+\[
+f:E\to\R\text{ continuous on connected }E,\qquad f(x)<y<f(z)
+\]
+\[
+\Longrightarrow \exists \xi\in E\text{ such that }f(\xi)=y.
+\]
+
+\entry{Path connected}
+\[
+E\text{ is path connected}
+\Longleftrightarrow
+\forall x,y\in E,\ \exists\text{ a continuous function }f:[0,1]\to E
+\text{ such that }f(0)=x,\ f(1)=y.
+\]
+
+\entry{Path connected implies connected}
+\[
+E\text{ is path connected}\Longrightarrow E\text{ is connected.}
+\]
+
+\entry{Identity Theorem}
+\[
+\text{Let }f,g:I\to\R\text{ be analytic, where }I\text{ is an open interval.}
+\]
+\[
+E=\{x\in I:f(x)=g(x)\}.
+\]
+\[
+\text{If }E\text{ contains a cluster point of }E,\text{ then }f=g\text{ on }I.
+\]
+
+\newpage
+
+\topic{Stone-Weierstrass}
+
+\entry{Uniform metric space}
+\[
+\text{Let }X\text{ be compact and }C(X)=\{f:X\to\R:f\text{ continuous}\}.
+\]
+\[
+\rho(f,g)=\norm{f-g}_\infty=\sup_{x\in X}|f(x)-g(x)|.
+\]
+\[
+\text{Then }f_n\to f\text{ in }C(X)
+\Longleftrightarrow f_n\to f\text{ uniformly on }X.
+\]
+
+\entry{Algebra}
+\[
+\text{Let }X\text{ be a set and }\mathcal A\text{ a set of functions from }X\text{ to }\R.
+\]
+\[
+\mathcal A\text{ is an algebra if }f+g,\ fg,\ cf\in\mathcal A
+\quad \forall f,g\in\mathcal A,\ \forall c\in\R.
+\]
+\[
+\mathcal A\text{ separates points of }X
+\Longleftrightarrow
+\forall x,y\in X,\ x\ne y,\ \exists f\in\mathcal A\text{ such that }f(x)\ne f(y).
+\]
+\[
+\mathcal A\text{ vanishes at no point of }X
+\Longleftrightarrow
+\forall x\in X,\ \exists f\in\mathcal A\text{ such that }f(x)\ne0.
+\]
+\[
+\mathcal A\text{ is an algebra}\Longrightarrow\overline{\mathcal A}\text{ is an algebra.}
+\]
+
+\entry{Stone-Weierstrass Theorem}
+\[
+\text{Let }X\text{ be compact and }C(X)\text{ the uniform norm space.}
+\]
+\[
+\mathcal A\subseteq C(X),\quad
+\mathcal A\text{ is an algebra, separates points of }X,\text{ and vanishes at no point of }X
+\]
+\[
+\Longrightarrow
+\overline{\mathcal A}=C(X).
+\]
+
+\entry{Weierstrass Approximation Theorem}
+\[
+f\in C([a,b])
+\Longrightarrow
+\exists\text{ a sequence of polynomials }p_n\to f\text{ uniformly on }[a,b].
+\]
+
+\newpage
+
+\topic{Partial Derivatives}
+
+\entry{Partial Derivative}
+\[
+\frac{\partial f}{\partial x_j}(a)
+=\lim_{h\to0}\frac{f(a+he_j)-f(a)}{h},
+\qquad
+D_jf(a)=\frac{\partial f}{\partial x_j}(a).
+\]
+
+\entry{$C^r$ functions}
+\[
+\text{Let }f:V\to\R^m,\quad V\subseteq\R^n,\quad r\in\N.
+\]
+\[
+f\in C^r(V)\Longleftrightarrow
+\text{all partial derivatives of }f\text{ of order }\le r
+\text{ exist and are continuous on }V.
+\]
+
+\entry{Clairaut's Theorem}
+\[
+\text{Let }f:V\to\R,\quad V\text{ open in }\R^n.
+\]
+\[
+f\in C^2(V)\Longrightarrow
+\frac{\partial^2 f}{\partial x_j\partial x_k}(a)
+=
+\frac{\partial^2 f}{\partial x_k\partial x_j}(a).
+\]
+
+\entry{Interchange of limits and integrals}
+\[
+\text{Let }f_n:I\to\R\text{ be continuous and }f_n\to f\text{ uniformly on }I=[a,b].
+\]
+\[
+\text{Then }f\text{ is continuous on }I,\qquad
+\lim_{n\to\infty}\int_a^b f_n(x)\,dx
+=\int_a^b f(x)\,dx.
+\]
+
+\entry{Interchange of derivative and integral}
+\[
+\text{Let }f:H\times\R\to\R,\quad H\times[a,b]\subseteq\R^2.
+\]
+\[
+\text{If the relevant partial derivative is continuous, then }
+\frac{d}{dy}\int_a^b f(x,y)\,dx
+=\int_a^b \frac{\partial f}{\partial y}(x,y)\,dx.
+\]
+
+\topic{Linear Transformations}
+
+\entry{Notation}
+\[
+A\in L(\R^n,\R^m),\qquad
+A=[a_{ij}]_{m\times n}.
+\]
+
+\entry{Norm of matrix}
+\[
+\norm{A}=\sup_{\norm{x}=1}\norm{Ax}
+=\sup_{x\ne0}\frac{\norm{Ax}}{\norm{x}}.
+\]
+\[
+\norm{Ax}\le\norm{A}\norm{x},\qquad
+\norm{AB}\le\norm{A}\norm{B},\qquad
+\norm{A+B}\le\norm{A}+\norm{B}.
+\]
+\[
+\rho(A,B)=\norm{A-B}\text{ is a metric on }L(\R^n,\R^m).
+\]
+\[
+\norm{A}\le\left(\sum_{i,j}a_{ij}^2\right)^{1/2}.
+\]
+
+\entry{Cauchy-Schwarz}
+\[
+|u\cdot v|\le\norm{u}\norm{v}.
+\]
+
+\newpage
+
+\topic{Differentiability}
+
+\entry{Total derivative}
+\[
+\text{Let }V\subseteq\R^n\text{ be open, }a\in V.
+\]
+\[
+f\text{ is differentiable at }a
+\Longleftrightarrow
+\exists T\in L(\R^n,\R^m)\text{ such that}
+\]
+\[
+\lim_{h\to0}\frac{\norm{f(a+h)-f(a)-Th}}{\norm{h}}=0.
+\]
+\[
+Df(a)=T.
+\]
+
+\entry{Continuous differentiability}
+\[
+\text{Let }V\subseteq\R^n\text{ be open and }f:V\to\R^m.
+\]
+\[
+\text{If }f\text{ is continuously differentiable at }a,\text{ then }f\text{ is differentiable at }a.
+\]
+\[
+\text{If }f\text{ is continuously differentiable on }V,\text{ then }f\in C^1(V).
+\]
+
+\entry{Continuously differentiable implies differentiable}
+\[
+f\text{ is continuously differentiable at }a
+\Longrightarrow f\text{ is differentiable at }a.
+\]
+
+\entry{Chain rule}
+\[
+U\subseteq\R^n,\ V\subseteq\R^m\text{ open},\qquad
+f:U\to\R^m,\quad g:V\to\R^k.
+\]
+\[
+f(U)\subseteq V,\quad f\text{ differentiable at }a,\quad g\text{ differentiable at }f(a)
+\]
+\[
+\Longrightarrow
+g\circ f\text{ differentiable at }a,\qquad
+D(g\circ f)(a)=Dg(f(a))Df(a).
+\]
+
+\topic{Mean Value Theorem}
+
+\entry{Line segment}
+\[
+\text{Let }x,a\in\R^n.
+\]
+\[
+\text{The line segment between }x\text{ and }a\text{ is }
+L(x,a)=\{a+t(x-a):0\le t\le1\}.
+\]
+
+\entry{Convexity}
+\[
+E\subseteq\R^n\text{ is convex}
+\Longleftrightarrow
+L(x,y)\subseteq E,\quad \forall x,y\in E.
+\]
+
+\entry{Scalar function MVT}
+\[
+\text{Let }f:V\to\R\text{ be differentiable on }V,\quad V\subseteq\R^n\text{ open.}
+\]
+\[
+V\text{ convex},\ x,a\in V
+\Longrightarrow
+\exists c\in L(x,a)\text{ such that}
+\]
+\[
+f(x)-f(a)=Df(c)(x-a)=\nabla f(c)\cdot(x-a).
+\]
+
+\entry{Vector-valued MVT}
+\[
+\text{Let }f:V\to\R^m\text{ be differentiable on }V,\quad V\subseteq\R^n\text{ open.}
+\]
+\[
+\forall x,a\in V\text{ with }L(x,a)\subseteq V,\quad
+\exists c\in L(x,a)\text{ such that}
+\]
+\[
+\norm{f(x)-f(a)}\le\norm{Df(c)}\norm{x-a}.
+\]
+
+\entry{Continuity of derivative map}
+\[
+\text{Let }V\subseteq\R^n\text{ be open and }f:V\to\R^m.
+\]
+\[
+f\in C^1(V)
+\Longleftrightarrow
+Df:V\to L(\R^n,\R^m)\text{ is continuous.}
+\]
+
+\entry{Bound on compact and convex set}
+\[
+\text{Let }f:V\to\R^m\text{ be }C^1\text{ on }V,\quad V\subseteq\R^n\text{ open.}
+\]
+\[
+\text{If }K\subseteq V\text{ is compact and convex, then }
+\exists M\ge0\text{ such that}
+\]
+\[
+\norm{f(x)-f(a)}\le M\norm{x-a},\qquad \forall x,a\in K.
+\]
+
+\newpage
+
+\topic{Inverse Function Theorem and Implicit Function Theorem}
+
+\entry{Invertible}
+\[
+\text{Let }B\in L(\R^n),\quad A\text{ is invertible.}
+\]
+\[
+A+B\text{ and }B\in L(\R^n)\text{ with }\norm{B-A}\le\frac1{2\norm{A^{-1}}}
+\Longrightarrow A+B\text{ is invertible and }\norm{(A+B)^{-1}}\le2\norm{A^{-1}}.
+\]
+\[
+A\mapsto A^{-1}\text{ is a continuous map.}
+\]
+
+\entry{$C$-Lipschitz}
+\[
+f:X\to X\text{ is }C\text{-Lipschitz if }C<1
+\text{ and }\rho(f(x),f(y))\le C\rho(x,y),\quad \forall x,y\in X.
+\]
+
+\entry{Contraction Principle}
+\[
+\text{Let }(X,\rho)\text{ be nonempty and complete metric space.}
+\]
+\[
+\text{If }f:X\to X\text{ is }C\text{-Lipschitz for }C<1,
+\text{ then it is a contraction and }\exists!x\in X\text{ such that }f(x)=x.
+\]
+
+\entry{Inverse Function Theorem}
+\[
+\text{Let }V\subseteq\R^n\text{ be open, }a\in V,\quad f:V\to\R^n
+\text{ be }C^1\text{ on }V,\quad Df(a)\text{ invertible.}
+\]
+\[
+\Longrightarrow
+\exists U\ni a,\ W\ni f(a)\text{ open such that }f:U\to W\text{ is one-to-one and onto,}
+\]
+\[
+f^{-1}:W\to U\text{ is }C^1\text{ and }
+D(f^{-1})(f(x))=(Df(x))^{-1},\quad \forall x\in U.
+\]
+
+\entry{Partial Jacobian}
+\[
+\text{Let }F=(f_1,\ldots,f_m):U\to\R^m,\quad
+U\subseteq\R^{n+m}\text{ open},\quad (x_0,y_0)\in U.
+\]
+\[
+D_yF=
+\left[\frac{\partial f_i}{\partial y_j}\right]_{m\times m},
+\qquad
+D_xF=
+\left[\frac{\partial f_i}{\partial x_j}\right]_{m\times n}.
+\]
+
+\entry{Implicit Function Theorem}
+\[
+\text{Let }U\subseteq\R^{n+m}\text{ be open, }(a,b)\in U,\ c\in\R^m,
+\quad f:U\to\R^m\text{ is }C^1\text{ on }U.
+\]
+\[
+f(a,b)=c,\qquad D_yf(a,b)\text{ is invertible.}
+\]
+\[
+\Longrightarrow
+\exists V\ni a,\ W\ni b\text{ open and }g:V\to W\text{ such that for each }x\in V
+\]
+\[
+\exists!y\in W\text{ with }(x,y)\in U\text{ and }f(x,y)=c,\qquad y=g(x).
+\]
+\[
+g\in C^1(V),\qquad f(x,g(x))=c,\qquad
+Dg(x)=-[D_yf(x,g(x))]^{-1}D_xf(x,g(x)).
+\]
+
+\newpage
+
+\topic{Riemann-Lebesgue Theorem}
+
+\entry{Upper and lower sums}
+\[
+\text{Let }\mathcal P\text{ be subrectangles of }P.
+\]
+\[
+U(f,\mathcal P)=\sum_{M\in\mathcal P} M_f(M)v(M),
+\qquad
+L(f,\mathcal P)=\sum_{M\in\mathcal P} m_f(M)v(M),
+\]
+\[
+M_f(M)=\sup_{x\in M}f(x),\qquad m_f(M)=\inf_{x\in M}f(x).
+\]
+\[
+\int_A f=\sup_{\mathcal P}L(f,\mathcal P),\qquad
+\int_A f=\inf_{\mathcal P}U(f,\mathcal P).
+\]
+
+\entry{Measure zero}
+\[
+E\text{ has measure zero in }\R^n
+\Longleftrightarrow
+\forall\varepsilon>0,\ \exists\text{ a countable cover }\{A_j\}_{j=1}^{\infty}
+\text{ of }E\text{ by closed/open rectangles}
+\]
+\[
+\text{such that }\sum_{j=1}^{\infty}v(A_j)<\varepsilon.
+\]
+
+\entry{Content zero}
+\[
+E\text{ has content zero if }
+\forall\varepsilon>0,\ \exists\text{ a finite cover }\{A_1,\ldots,A_N\}
+\text{ of }E
+\]
+\[
+\text{by closed/open rectangles such that }\sum_{j=1}^{N}v(A_j)<\varepsilon.
+\]
+
+\entry{Riemann-Lebesgue Theorem}
+\[
+\text{Let }f:A\to\R\text{ be bounded, where }A\text{ is a closed rectangle in }\R^n.
+\]
+\[
+f\text{ is integrable on }A
+\Longleftrightarrow
+\{x\in A:f\text{ is discontinuous at }x\}\text{ has measure zero.}
+\]
+
+\topic{Jordan Measurability and Fubini}
+
+\entry{Characteristic function}
+\[
+\text{Let }A\text{ be a closed rectangle in }\R^n,\quad B\subseteq A.
+\]
+\[
+\chi_B:A\to\R\text{ is the characteristic function,}\qquad
+\chi_B(x)=
+\begin{cases}
+1,&x\in B,\\
+0,&x\in A\setminus B.
+\end{cases}
+\]
+
+\entry{Jordan-measurable}
+\[
+E\subseteq\R^n\text{ is Jordan-measurable if }E\text{ is bounded and }\partial E\text{ has measure }0.
+\]
+
+\entry{Integrability of }\(\chi_B\)
+\[
+\text{If }E\subseteq A\text{ is Jordan-measurable for a closed rectangle }A\subseteq\R^n,
+\text{ then }\chi_E\text{ is integrable.}
+\]
+\[
+\int_A\chi_B=\int_B1.
+\]
+\[
+E\text{ has content zero}\Longleftrightarrow E\text{ is Jordan-measurable and }\int_A\chi_E=0.
+\]
+\[
+E\text{ has measure zero and }E\text{ is Jordan-measurable}
+\Longleftrightarrow
+E\subseteq A\text{ for some closed rectangle }A\text{ and }\int_A\chi_E=0.
+\]
+
+\entry{Fubini's Theorem}
+\[
+\text{Let }A\subseteq\R^n,\ B\subseteq\R^m\text{ be closed rectangles,}
+\quad f:A\times B\to\R\text{ be integrable on }A\times B.
+\]
+\[
+\int_{A\times B}f
+=\int_A\left(\int_B f(x,y)\,dy\right)dx
+=\int_B\left(\int_A f(x,y)\,dx\right)dy.
+\]
+\[
+\text{In particular, if for each }x\in A,\ \int_B f(x,y)\,dy\text{ exists,}
+\text{ and for each }y\in B,\ \int_A f(x,y)\,dx\text{ exists,}
+\]
+\[
+\text{then }\int_{A\times B}f
+=\int_A\int_B f(x,y)\,dy\,dx
+=\int_B\int_A f(x,y)\,dx\,dy.
+\]
+
+\end{document}
