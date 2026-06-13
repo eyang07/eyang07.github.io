@@ -6,4 +6,9 @@ department: Mathematics
 permalink: /notes/math354-chaotic-dynamical-systems/
 ---
 
-*Notes coming soon.*
+## Dynamical Systems Notes
+
+{% include note-viewer.liquid
+  title="MATH 320-1 Midterm 2 Notes"
+  pdf="/assets/pdf/notes/dynamics.pdf"
+%}
