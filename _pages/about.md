@@ -12,8 +12,7 @@ profile:
     <a href='https://www.northwestern.edu'>Northwestern University</a><br>
     Computer Engineering &amp; Pure Mathematics<br>
     Math &middot; Formal Methods &middot; AI<br>
-    📍 Evanston, IL<br>
-    <a href='https://huggingface.co/cire77'>Hugging Face</a>
+    📍 Evanston, IL
 
 selected_papers: false
 social: true
