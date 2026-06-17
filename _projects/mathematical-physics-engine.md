@@ -10,6 +10,6 @@ links:
 permalink: /projects/mathematical-physics-engine/
 ---
 
-Physics engine for animations of systems in analytical mechanics. Also building it into a safety verifier.
+A symbolic and numerical mechanics engine for Lagrangian and Hamiltonian systems, generating simulations and visualizations of classical dynamical systems. I am extending it toward safety verification by exporting dynamics, assumptions, candidate invariants, safe sets, and proof obligations as artifacts for downstream verifiers.
 
 The code can be found here: <https://github.com/eyang07/physics-engine>

@@ -7,7 +7,7 @@ status: ongoing          # e.g. ongoing / submitted / published
 role:                    # e.g. Research Assistant
 year: 2026
 # ---------------------------
-description: Comparing deductive verification and model checking for guaranteeing the physical safety of a feedback-controlled drone.
+description: One drone model, verified three ways — TLA+/TLC, nuSMV, and Lean 4 — to weigh automation against strength of guarantee.
 links:
   - label: code
     url: https://github.com/eyang07/droneV
