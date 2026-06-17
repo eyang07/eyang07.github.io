@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Space shooter game written in Arm assembly
+title: Space shooter in assembly
 context: CE 205
 importance: 2
 links:
@@ -9,4 +9,4 @@ links:
 permalink: /projects/arm-space-shooter/
 ---
 
-A space-shooter game implemented from scratch in ARM assembly. A demo of the game can be watched here: <https://youtu.be/3iqZK1-63CY>
+A space-shooter game implemented in ARM assembly. A demo of the game can be watched here: <https://youtu.be/3iqZK1-63CY>

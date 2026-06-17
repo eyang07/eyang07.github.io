@@ -72,31 +72,21 @@ description: Tools and languages I work with.
       <span class="skill-tag">TLA+/TLC</span>
       <span class="skill-tag">nuSMV</span>
       <span class="skill-tag">PLT Redex</span>
+      <span class="skill-tag">Racket</span>
       <span class="skill-tag">temporal logic</span>
       <span class="skill-tag">operational semantics</span>
     </div>
   </div>
 
   <div class="skill-group">
-    <div class="skill-label">Programming</div>
-    <div class="skill-items">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">C/C++</span>
-      <span class="skill-tag">MATLAB</span>
-      <span class="skill-tag">Racket</span>
-      <span class="skill-tag">Verilog</span>
-      <span class="skill-tag">ARM/x86 Assembly</span>
-      <span class="skill-tag">LaTeX</span>
-    </div>
-  </div>
-
-  <div class="skill-group">
     <div class="skill-label">ML &amp; Scientific Computing</div>
     <div class="skill-items">
+      <span class="skill-tag">Python</span>
       <span class="skill-tag">PyTorch</span>
       <span class="skill-tag">NumPy</span>
       <span class="skill-tag">SymPy</span>
       <span class="skill-tag">AI2-THOR</span>
+      <span class="skill-tag">MATLAB</span>
       <span class="skill-tag">Simulink</span>
     </div>
   </div>
@@ -105,12 +95,15 @@ description: Tools and languages I work with.
     <div class="skill-label">Robotics &amp; Systems</div>
     <div class="skill-items">
       <span class="skill-tag">ROS2</span>
+      <span class="skill-tag">C/C++</span>
       <span class="skill-tag">URDF/xacro</span>
       <span class="skill-tag">AprilTag</span>
       <span class="skill-tag">Git</span>
       <span class="skill-tag">Linux/macOS</span>
       <span class="skill-tag">Arduino</span>
       <span class="skill-tag">ESP32</span>
+      <span class="skill-tag">Verilog</span>
+      <span class="skill-tag">ARM/x86 Assembly</span>
     </div>
   </div>
 

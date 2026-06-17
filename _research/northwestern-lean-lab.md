@@ -8,7 +8,6 @@ status: ongoing
 role:
 year: 2025
 # ---------------------------
-description: Formalizing mathematics in Lean, including a contribution to DeepMind's Formal Conjectures.
 links:
   - label: Formal Conjectures
     url: https://github.com/google-deepmind/formal-conjectures

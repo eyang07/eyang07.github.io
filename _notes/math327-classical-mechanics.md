@@ -6,10 +6,6 @@ department: Mathematics
 permalink: /notes/math327-classical-mechanics/
 ---
 
-## Classical Mechanics Notes
-
-Typeset from the handwritten PDF source with corrected scan-level spelling and a cleaner academic style.
-
 {% include note-viewer.liquid
   title="MATH 327 Classical Mechanics Notes"
   pdf="/assets/pdf/notes/math327-classical-mechanics-notes.pdf"
