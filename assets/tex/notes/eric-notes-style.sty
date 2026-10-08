@@ -1,0 +1,73 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{eric-notes-style}[2026/06/12 Eric Yang class notes style]
+
+\RequirePackage[letterpaper,margin=0.78in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{newtxtext,newtxmath}
+\RequirePackage{amsmath,mathtools}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{enumitem}
+\RequirePackage{hyperref}
+\RequirePackage{microtype}
+
+\definecolor{ENPaper}{HTML}{FFFDF3}
+\definecolor{ENInk}{HTML}{171717}
+\definecolor{ENMuted}{HTML}{555555}
+\definecolor{ENTopic}{HTML}{D9FFFB}
+\definecolor{ENDef}{HTML}{FFF59D}
+\definecolor{ENThm}{HTML}{FFF176}
+\definecolor{ENProp}{HTML}{E8F5E9}
+\definecolor{ENBorder}{HTML}{D9D2A6}
+\definecolor{ENBlue}{HTML}{1A73E8}
+\definecolor{ENRed}{HTML}{C5221F}
+
+\pagecolor{ENPaper}
+\color{ENInk}
+\hypersetup{colorlinks=true,linkcolor=ENInk,urlcolor=ENBlue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.8em,itemsep=0.18em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=2.1em,itemsep=0.18em,topsep=0.25em}
+
+\tcbset{
+  enhanced,
+  sharp corners=all,
+  boxrule=0.45pt,
+  left=0.65em,
+  right=0.65em,
+  top=0.45em,
+  bottom=0.45em,
+  before skip=0.65em,
+  after skip=0.55em,
+}
+
+\newtcbox{\topicbox}{on line,colback=ENTopic,colframe=ENTopic,boxrule=0pt,arc=2pt,left=0.8em,right=0.8em,top=0.35em,bottom=0.35em}
+\newtcbox{\labelbox}{on line,colback=ENDef,colframe=ENDef,boxrule=0pt,arc=2pt,left=0.35em,right=0.35em,top=0.15em,bottom=0.15em}
+
+\newcommand{\notetitle}[2]{%
+  \begin{center}
+    {\Large\bfseries #1}\\[-0.15em]
+    {\color{ENMuted}\small #2}
+  \end{center}
+  \vspace{0.35em}
+}
+
+\newcommand{\topic}[1]{%
+  \begin{center}
+    \topicbox{\Large\bfseries #1}
+  \end{center}
+}
+
+\newcommand{\entry}[1]{\par\medskip\noindent$\bullet$\ \labelbox{\bfseries #1}\par\nobreak}
+\newcommand{\subentry}[1]{\par\smallskip\noindent\labelbox{\bfseries #1}\par\nobreak}
+\newcommand{\blue}[1]{{\color{ENBlue}#1}}
+\newcommand{\red}[1]{{\color{ENRed}#1}}
+\newcommand{\bluestar}{\blue{$\star$}}
+\newcommand{\redstar}{\red{$\star$}}
+
+\newenvironment{noteblock}{%
+  \begin{tcolorbox}[colback=white,colframe=ENBorder]
+}{%
+  \end{tcolorbox}
+}

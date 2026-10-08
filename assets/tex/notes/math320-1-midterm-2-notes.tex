@@ -1,0 +1,540 @@
+\documentclass[11pt]{article}
+\usepackage{assets/tex/notes/eric-notes-style}
+
+\begin{document}
+
+\notetitle{MATH 320-1: Midterm 2 Notes}{Real Analysis I}
+
+\entry{Lim Sup and Lim Inf:}
+
+\[
+\text{Let } x_n \text{ be bounded, then}
+\]
+\begin{itemize}
+\item
+\[
+\lim_{n\to\infty}\sup x_n
+=
+\lim_{n\to\infty}\sup_{k\ge n} x_k
+=
+\inf_{n\in\mathbb N}\sup_{k\ge n}x_k
+\qquad e_{x_i}, i\in J
+\]
+\item
+\[
+\lim_{n\to\infty}\inf x_n
+=
+\lim_{n\to\infty}\inf_{k\ge n} x_k
+=
+\sup_{n\in\mathbb N}\inf_{k\ge n}x_k
+\]
+\end{itemize}
+
+\entry{Limits of Functions: \bluestar}
+
+\[
+\lim_{x\to a} f(x)=L \quad \text{or} \quad f(\omega)\to L \text{ as } x\to a
+\]
+\[
+\text{if } \forall \varepsilon>0,\ \exists \delta>0 \text{ s.t. }
+|f(x)-L|<\varepsilon
+\quad
+\forall x\in I \text{ w/ } 0<|x-a|<\delta
+\]
+
+\entry{Limits of sequence: \redstar\ \red{From Midterm 1}}
+
+\[
+\lim_{n\to\infty}x_n=a \quad \text{or} \quad x_n\to a
+\]
+\[
+\text{if } \forall \varepsilon>0,\ \exists N\in\mathbb N \text{ s.t. }
+\forall n\ge N,\ |x_n-a|<\varepsilon
+\]
+
+\entry{Sequential Characterization of Limits}
+
+\[
+f(x)\to L \text{ as } x\to a
+\quad \Longleftrightarrow \quad
+f(x_n)\to L
+\quad \forall \text{ sequences } x_n\to a \text{ w/ each } x_n\in I\setminus\{a\}
+\]
+
+\entry{Divergence Criteria}
+
+\[
+\text{If } \exists \text{ sequence } x_n\to a \text{ w/ } x_n\in I\setminus\{a\}
+\]
+\[
+\text{s.t. } \{f(x_n)\} \text{ diverges,}
+\]
+\[
+\text{or } \exists \text{ sequences } x_n\to a \text{ and } y_n\to a
+\text{ w/ } x_n,y_n\in I\setminus\{a\}
+\]
+\[
+\text{s.t. } \{f(x_n)\} \text{ and } \{f(y_n)\} \text{ converges to different limits,}
+\]
+\[
+\text{then } \lim_{x\to a} f(x)\ \mathrm{DNE}
+\]
+
+\newpage
+
+\topic{Limits of functions}
+
+\[
+\text{Note: } \left\{\sin\left(\frac{\pi}{2}+n\pi\right)\right\}=\{(-1)^n\}
+\qquad \forall n\in\mathbb N
+\]
+
+\entry{Algebraic Laws of limits of functions:}
+
+\[
+\text{Suppose } \lim_{x\to a}f(x)=L \quad \text{and} \quad \lim_{x\to a}g(x)=M
+\]
+\[
+\text{Then } \lim_{x\to a}(f+g)(x)=L+M,\qquad
+\lim_{x\to a}(\alpha f)(x)=\alpha L\quad \forall \alpha\in\mathbb R
+\]
+\[
+\lim_{x\to a}(fg)(x)=LM,\qquad
+\lim_{x\to a}\frac{f}{g}(x)=\frac{L}{M}\quad \text{if }M\ne0
+\]
+
+\entry{Squeeze Thm:}
+
+\[
+\text{If } f(x)\le g(x)\le h(x),\quad \forall x\in I\setminus\{a\},
+\]
+\[
+\text{and } \lim_{x\to a}f(x)=\lim_{x\to a}h(x)=L,\quad
+\text{then } \lim_{x\to a}g(x)=L
+\]
+
+\entry{Comparison Thm:}
+
+\[
+\text{If } f(x)\le g(x),\quad \forall x\in I\setminus\{a\},
+\]
+\[
+\lim_{x\to a}f(x)=L \quad \text{and} \quad \lim_{x\to a}g(x)=M,
+\]
+\[
+\text{then } L\le M
+\]
+
+\[
+\text{Let } f:(a,b)\to\mathbb R,\ \text{where } a<b
+\]
+
+\entry{Right hand limit:}
+
+\[
+\lim_{x\to a^+} f(x)=L
+\quad \text{if } \forall \varepsilon>0,\ \exists\delta>0\ \text{s.t.}
+\]
+\[
+|f(x)-L|<\varepsilon
+\quad \forall x\in(a,b)\ \text{w/ } a<x<a+\delta
+\]
+
+\entry{Left hand limit:}
+
+\[
+\lim_{x\to b^-} f(x)=L
+\quad \text{if } \forall \varepsilon>0,\ \exists\delta>0\ \text{s.t.}
+\]
+\[
+|f(x)-L|<\varepsilon
+\quad \forall x\in(a,b)\ \text{w/ } b-\delta<x<b
+\]
+
+\newpage
+
+\topic{Continuity}
+
+\[
+\text{Let } f:E\to\mathbb R,\ \text{where } \varnothing\ne E\subseteq\mathbb R
+\]
+
+\entry{Continuous function: \bluestar}
+
+\[
+f \text{ is continuous at } a\in E \text{ if } \forall\varepsilon>0,\ \exists\delta>0
+\]
+\[
+\text{s.t. } |f(x)-f(a)|<\varepsilon
+\quad \forall x\in E\ \text{w/ } |x-a|<\delta
+\]
+
+\[
+\text{Say } f \text{ is continuous on } E
+\text{ if } f \text{ is continuous at every } a\in E
+\]
+
+\entry{Sequential Characterization of Continuity \bluestar}
+
+\[
+\text{Let } f:E\to\mathbb R,\ \text{where } \varnothing\ne E\subseteq\mathbb R,\ a\in E
+\]
+\[
+\text{Then } f \text{ is continuous at } a
+\]
+\[
+\Longleftrightarrow\quad
+f(x_n)\to f(a)\quad
+\forall \text{ sequences } x_n\to a\ \text{w/ each } x_n\in E
+\]
+
+\entry{Algebraic Laws of Continuous functions}
+
+\[
+\text{Let } f,g:E\to\mathbb R,\ \text{where } \varnothing\ne E\subseteq\mathbb R,
+\]
+\[
+a\in E,\ \text{if } f \text{ and } g \text{ are continuous at } a,\ \text{then so are}
+\]
+\[
+f+g,\qquad \alpha f,\ \forall \alpha\in\mathbb R,\qquad fg,\qquad
+\frac{f}{g}\ \text{if }g(a)\ne0,\qquad \frac{1}{g}
+\]
+
+\[
+\text{Every polynomial is continuous, and } \frac{p(x)}{q(x)}
+\ (p,Q \text{ are polynomials})
+\]
+
+\entry{Composite functions}
+
+\[
+\text{Let } f:A\to\mathbb R,\quad g:B\to\mathbb R,\quad
+\text{where } A,B\subseteq\mathbb R,\ f(A)\subseteq B
+\]
+\[
+(g\circ f)(x)=g(f(x)),\quad x\in A
+\]
+\[
+\text{if } f \text{ is continuous at } a\in A \text{ and } g \text{ is continuous at } f(a),
+\]
+\[
+\text{then } g\circ f \text{ is continuous at } a
+\]
+
+\newpage
+
+\entry{Let $f,g:E\to\mathbb R$, if $f$ and $g$ are continuous on $E$,}
+
+\[
+\text{so are:}
+\]
+\[
+|f|,\quad |g|,\quad |f+g|,\quad |f-g|,\quad \max\{f(x),g(x)\}
+\]
+
+\entry{Extreme Value Thm \bluestar\ \redstar}
+
+\[
+\text{Let } f:[a,b]\to\mathbb R \text{ be continuous, where } a\le b \text{ in } \mathbb R,\ \text{then}
+\]
+\[
+\text{i) } f \text{ is bounded i.e. } \exists M\in\mathbb R \text{ s.t. } |f(x)|\le M
+\quad \forall x\in[a,b]
+\]
+\[
+\text{ii) } f \text{ attains a minimum and a maximum}
+\]
+
+\entry{Approximation property for a sequence converging to supremum}
+
+\[
+\text{Let } S \text{ be bounded and } \varnothing\ne S\subseteq\mathbb R,
+\]
+\[
+\text{Let } L=\sup(S),\ \text{By the Approximation property,}
+\]
+\[
+\forall\varepsilon>0,\ \exists a\in S\ \text{s.t. } L-\varepsilon<a\le L
+\]
+\[
+\text{let } \varepsilon=\frac{1}{n},\ \text{we have } \{x_n\}\subseteq S\ \text{s.t.}
+\]
+\[
+L-\frac{1}{n}<x_n\le L,\quad \text{by squeeze, } \lim_{n\to\infty}x_n=L
+\]
+
+\entry{Intermediate Value Thm \bluestar\ \redstar}
+
+\[
+\text{Let } f:[a,b]\to\mathbb R \text{ be continuous, where } a<b \text{ in } \mathbb R
+\]
+\[
+\text{If } f(a)<y_0<f(b),\ \exists x_0\in[a,b]\ \text{s.t. } f(x_0)=y_0
+\]
+
+\entry{Triy Ineq:}
+
+\[
+|a+b|\le |a|+|b|
+\]
+\[
+\big||a|-|b|\big|\le |a-b|
+\]
+
+\newpage
+
+\topic{Uniform Continuity}
+
+\entry{Uniformly Continuous functions:}
+
+\[
+\text{Let } f:E\to\mathbb R,\ \text{where } \varnothing\ne E\subseteq\mathbb R
+\]
+\[
+f \text{ is uniformly continuous on } E \text{ if } \forall\varepsilon>0,\ \exists\delta>0
+\]
+\[
+\text{s.t. } |f(x)-f(y)|<\varepsilon
+\quad \forall x,y\in E\ \text{w/ } |x-y|<\delta
+\]
+\[
+\text{\redstar}\quad \delta \text{ only depend on } \varepsilon
+\]
+
+\entry{Uniform continuity and Cauchy}
+
+\[
+\text{Let } f:E\to\mathbb R \text{ be uniformly continuous, where } \varnothing\ne E\subseteq\mathbb R,
+\]
+\[
+\text{if } \{x_n\} \text{ is Cauchy w/ } x_n\in E,\ \text{then } \{f(x_n)\} \text{ is Cauchy}
+\]
+
+\entry{Continuous to uniformly continuous Thm}
+
+\[
+\text{Any continuous function } f:[a,b]\to\mathbb R \text{ is}
+\]
+\[
+\text{uniformly continuous, where } a\le b
+\]
+
+\topic{Differentiability}
+
+\entry{Differentiable function}
+
+\[
+\text{Let } a\in\mathbb R,\ I \text{ an open interval containing }a,\ f:I\to\mathbb R,
+\]
+\[
+\text{Say } f \text{ is differentiable at } a \text{ if}
+\]
+\[
+f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}
+\]
+\[
+\text{exists, and } f \text{ is differentiable on } I \text{ if } f \text{ is differentiable}
+\]
+\[
+\text{on every } a\in I.\quad
+f''(a)=(f')'(a),\ \text{in general, } f^{(n)}(a)=\left(f^{(n-1)}\right)'(a),\ n\in\mathbb N
+\]
+
+\entry{Continuously differentiable}
+
+\[
+f \text{ is continuously differentiable on } I \text{ and write } f\in C^1(I)
+\]
+\[
+\text{if } f' \text{ exists and is continuous on } I
+\]
+\[
+C^n(I)=\{f:I\to\mathbb R,\ f \text{ is } n \text{ times continuously differentiable}\}
+\quad n\in\mathbb N
+\]
+\[
+C^\infty(I)=\{f:I\to\mathbb R:\ f \text{ is smooth or indefinitely differentiable, }
+f^{(n)} \text{ exists on } I\ \forall n\in\mathbb N\}
+\]
+
+\newpage
+
+\entry{Differentiability on non-open intervals}
+
+\[
+f:[a,b]\to\mathbb R,
+\]
+\[
+f'(a)=\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a}
+=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}
+\]
+\[
+f'(b)=\lim_{x\to b^-}\frac{f(x)-f(b)}{x-b}
+=\lim_{h\to0^-}\frac{f(b+h)-f(b)}{h}
+\]
+
+\entry{Differentiability Implies Continuity Thm}
+
+\[
+\text{If } f \text{ is differentiable at } a,\ \text{then } f \text{ is continuous at } a
+\]
+
+\entry{Chain Rule}
+
+\[
+\text{Let } f:I\to\mathbb R,\quad g:J\to\mathbb R,\quad \text{where } I,J \text{ are open intervals}
+\]
+\[
+\text{and } f(I)\subseteq J
+\]
+\[
+\text{Suppose } f \text{ is diff'ble at } a\in I \text{ and } g \text{ is diff'ble at } f(a),
+\]
+\[
+\text{Then } g\circ f \text{ is diff'ble at } a,\ \text{and } (g\circ f)'(a)=g'(f(a))f'(a)
+\]
+
+\entry{Algebraic Rules of differentiable functions}
+
+\[
+\text{Let } f,g:I\to\mathbb R \text{ be differentiable at } a,\ \text{where } I \text{ is an interval containing } a,
+\]
+\[
+\text{Then } f+g,\ \alpha f\ (\forall\alpha\in\mathbb R),\ fg,\ \frac{f}{g}(g(a)\ne0)
+\text{ are all differentiable at } a
+\]
+\[
+(f+g)'(a)=f'(a)+g'(a)
+\]
+\[
+(\alpha f)'(a)=\alpha f'(a)
+\]
+\[
+(fg)'(a)=f'(a)g(a)+f(a)g'(a)
+\]
+\[
+\left(\frac{f}{g}\right)'(a)=
+\frac{f'(a)g(a)-f(a)g'(a)}{g^2(a)},
+\qquad
+\left(\frac{1}{g}\right)'(a)=\frac{-g'(a)}{g^2(a)}
+\]
+
+\entry{Power Rule}
+
+\[
+(x^n)'=nx^{n-1}
+\]
+
+\newpage
+
+\topic{Mean Value Theorem}
+
+\entry{Rolle's Thm:}
+
+\[
+\text{Let } f:[a,b]\to\mathbb R \text{ be continuous on } [a,b] \text{ and differentiable on } (a,b)
+\]
+\[
+\text{If } f(a)=f(b),\ \text{then } \exists c\in(a,b)
+\]
+\[
+\text{s.t. } f'(c)=0
+\]
+
+\entry{Mean Value Thm:}
+
+\[
+\text{Let } f,g:[a,b]\to\mathbb R \text{ be continuous on } [a,b]
+\]
+\[
+\text{and differentiable on } (a,b),
+\]
+\[
+\text{then } \exists c\in(a,b) \text{ s.t. } f'(c)=\frac{f(b)-f(a)}{b-a}
+\]
+\[
+\text{more generally, } \exists c\in(a,b) \text{ s.t.}
+\]
+\[
+f'(c)\bigl(g(b)-g(a)\bigr)=g'(c)\bigl(f(b)-f(a)\bigr)
+\]
+
+\entry{strictly or non strictly increasing or decreasing}
+
+\[
+\text{Let } f:[a,b]\to\mathbb R \text{ be cts on } [a,b]
+\]
+\[
+\text{and diff'ble on } (a,b)
+\]
+\[
+f\text{ is:}
+\]
+\[
+\begin{array}{lll}
+\bullet\ \text{strictly increasing} & \text{if } f'(x)>0 & \forall x\in(a,b)\\
+\bullet\ \text{increasing} & \text{if } f'(x)\ge0 &\\
+\bullet\ \text{strictly decreasing} & \text{if } f'(x)<0 &\\
+\bullet\ \text{decreasing} & \text{if } f'(x)\le0 &\\
+\bullet\ \text{constant} & \text{if } f'(x)=0 &
+\end{array}
+\qquad
+\begin{array}{ll}
+f(x)<f(y) & \text{if } x<y\\
+f(x)\le f(y) &\\
+f(x)>f(y) &\\
+f(x)\ge f(y) &\\
+f(x)=f(y) &
+\end{array}
+\]
+
+\entry{Intermediate Value Thm for derivatives}
+
+\[
+\text{Let } f:[a,b]\to\mathbb R \text{ be diff'ble w/ } f'(a)\ne f'(b),
+\]
+\[
+\text{If } f'(a)<y_0<f'(b) \text{ or } f'(b)<y_0<f'(a),
+\]
+\[
+\text{then } \exists c\in[a,b] \text{ s.t. } f'(c)=y_0
+\]
+
+\newpage
+
+\entry{Heine Cantor Thm}
+
+\[
+\text{If } f:[a,b]\to\mathbb R \text{ is differentiable w/ } f'(x)
+\]
+\[
+\text{being bounded on } (a,b),\ \text{then } f \text{ is uniformly continuous}
+\]
+
+\entry{Second derivative test}
+
+\[
+\text{Let } a\in\mathbb R,\ I \text{ an open interval containing } a,\ f:I\to\mathbb R \text{ differentiable.}
+\]
+\[
+\text{If } f'(a)=0 \text{ and } f''(a)>0,\ \text{then } f \text{ has a local minimum}
+\]
+\[
+\text{at } a,\ \text{i.e. } \exists\delta>0\ \text{w/ } (a-\delta,a+\delta)\subseteq I
+\]
+\[
+\text{s.t. } f(x)\ge f(a)\quad \forall x\in(a-\delta,a+\delta)
+\]
+
+\entry{\blue{Cauchy Sequences:}}
+
+\[
+\{x_n\} \text{ is Cauchy if } \forall\varepsilon>0,
+\]
+\[
+\exists N\in\mathbb N \text{ s.t. } |x_m-x_n|<\varepsilon,\quad \forall n,m\ge N
+\]
+
+\end{document}
