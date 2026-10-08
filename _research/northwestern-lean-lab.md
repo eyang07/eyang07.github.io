@@ -11,6 +11,10 @@ year: 2025
 links:
   - label: Formal Conjectures
     url: https://github.com/google-deepmind/formal-conjectures
+  - label: "Merged PR #3498"
+    url: https://github.com/google-deepmind/formal-conjectures/pull/3498
+  - label: "Merged PR #4365"
+    url: https://github.com/google-deepmind/formal-conjectures/pull/4365
 permalink: /research/northwestern-lean-lab/
 ---
 
