@@ -181,7 +181,7 @@ collections:
     output: true
     permalink: /projects/:path/
   notes:
-    output: true
+    output: false
     permalink: /notes/:path/
   presentations:
     output: true
