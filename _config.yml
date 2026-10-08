@@ -9,7 +9,7 @@ last_name: Yang
 contact_note: >
   The best way to reach me is via email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Junior pursuing B.S./M.S. in Computer Engineering and B.A. in Mathematics (Pure Mathematics Concentration) at Northwestern University.
+  Senior studying Computer Engineering and Mathematics at Northwestern University, with research interests in formal verification, theorem proving, and CPS verification.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.

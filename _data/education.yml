@@ -6,6 +6,10 @@
 #   logo    - path under /assets/img/ (square-ish PNG works best at 64x64)
 #   notes   - lab + advisor; inline HTML / links allowed (use YAML ">" block)
 - school: Northwestern University
+  dates: 2027 &ndash; 2028
+  degree: M.S. in Computer Science
+  logo: /assets/img/edu/northwestern.png
+- school: Northwestern University
   dates: 2023 &ndash; 2027 (expected)
   degree: B.S. in Computer Engineering &middot; B.A. in Mathematics
   logo: /assets/img/edu/northwestern.png
