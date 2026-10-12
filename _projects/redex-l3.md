@@ -2,7 +2,7 @@
 layout: page
 title: Redex implementation of L3
 context: CS 324
-importance: 1
+importance: 2
 featured: true
 description: 
 links:

@@ -2,7 +2,7 @@
 layout: page
 title: Banach Fixed Point Theorem and Bellman Equations in Lean
 context: Utrecht University
-importance: 4
+importance: 3
 description: A Lean formalization of the Banach Fixed Point Theorem and its application to convergence of finite Bellman equations.
 links:
   - label: code

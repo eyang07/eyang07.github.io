@@ -31,7 +31,7 @@ Currently, I work as a research assistant at the IDEAS Lab, where I work on form
 ## Selected work
 
 {% assign featured_research = site.research | concat: site.data.research | where: "featured", true %}
-{% assign featured_projects = site.projects | where: "featured", true %}
+{% assign featured_projects = site.projects | concat: site.data.projects | where: "featured", true %}
 {% assign featured = featured_research | concat: featured_projects | sort: "importance" %}
 {% include entry-list.liquid items=featured empty="Coming soon." %}
 
