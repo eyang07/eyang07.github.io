@@ -14,4 +14,6 @@ I attended the Lean summer course at Utrecht University, directed by Johan Comme
 
 For my course project, I formalized the Banach Fixed Point Theorem by hand in Lean and used it to prove the convergence of finite Bellman equations.
 
+I also presented my implementation.
+
 The code is available on [GitHub](https://github.com/eyang07/lean-banach-bellman).
