@@ -22,7 +22,11 @@
   {%- endif -%}
   <div class="entry-body">
     <div class="entry-head">
+      {%- if item.listing_only -%}
+      <span class="entry-title">{{ item.title }}</span>
+      {%- else -%}
       <a class="entry-title" href="{{ link }}">{{ item.title }}</a>
+      {%- endif -%}
       {%- if item.course_code and gf != "course_code" -%}<span class="entry-pill">{{ item.course_code }}</span>{%- endif -%}
       {%- if item.context and gf != "context" -%}<span class="entry-pill">{{ item.context }}</span>{%- endif -%}
       {%- if item.role and gf != "role" -%}<span class="entry-pill">{{ item.role }}</span>{%- endif -%}
