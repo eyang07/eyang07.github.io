@@ -2,13 +2,28 @@
 layout: page
 title: Learning Modular Multiplication with Neural Networks
 importance: 4
-description: Learning modular multiplication through supervised transformer scratchpads for the SAIR challenge.
+description: Neural modular multiplication for the SAIR challenge, with submission results and an evaluation audit.
 permalink: /research/neural-modular-multiplication/
 ---
 
-The SAIR Modular Arithmetic Challenge asks neural networks to learn modular multiplication from their parameters. My approach uses a decoder-only transformer with abacus-style positional embeddings to generate a supervised arithmetic scratchpad, multiplying and reducing after each digit to keep intermediate values small. At inference, the model emits digit tokens without directly performing division or modular arithmetic.
+The SAIR Modular Arithmetic Challenge asks neural networks to learn modular multiplication. I explored supervised arithmetic scratchpads that make intermediate computations explicit, helping limit errors across long calculations. The evaluated submission uses a learned recurrence for each tier.
 
-Progress came from making intermediate computations explicit: partial sums unlocked tier 3, quotient-times-modulus products unlocked tier 4, and a higher numeric base shortened the execution chain for tier 5. These representational changes helped limit the accumulation of errors across long computations.
+## Competition results
 
-The submitted models reached **htop90 = 5** in runs through the organizers' evaluation pipeline, compared with the public baseline of **1**. Tier 5 covers 33–64-bit primes and remained close to the 90% accuracy threshold, so its held-out pass was not certain. Work toward tier 6 focused on faster decoding with a key-value cache, a denser numeric base, and a self-checking borrow field to reduce off-by-one errors.
+Submission **MAC01-T00044** (`cire77/modmul`, revision `6e7450f098f84bca6b0037b994060d3ad45b4f38`) received a reported score of **69.4%**, with **76.4 seconds** of inference time and an audit status of **Warning**. Observed accuracy was at least 90% on tiers T1–T7, including 100% on T5–T7, before falling to 2% on T8–T10.
 
+| Tier | Observed accuracy |
+| --- | ---: |
+| T0 | 45% |
+| T1 | 100% |
+| T2 | 100% |
+| T3 | 98% |
+| T4 | 90% |
+| T5 | 100% |
+| T6 | 100% |
+| T7 | 100% |
+| T8 | 2% |
+| T9 | 2% |
+| T10 | 2% |
+
+**Audit warning — operand pre-reduction.** The submitted implementation reduces both operands modulo the input modulus in Python before selecting the tier-specific recurrence. The evaluation rules require a preprocessing hook to use only its own argument; using the modulus to pre-reduce an operand outside the model removes part of the calculation the model must learn. These figures therefore describe the observed submitted implementation, not a confirmed rules-compliant result. The audit also notes that the learned recurrence itself does not use multi-phase host composition.
