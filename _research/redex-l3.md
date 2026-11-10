@@ -10,7 +10,7 @@ links:
     url: https://github.com/eyang07/L3redex
   - label: talk
     url: /presentations/l3-linear-language-with-location/
-permalink: /projects/redex-l3/
+permalink: /research/redex-l3/
 ---
 
 A small-step semantics for L3, a linear language with locations. The L3 implementation in PLT Redex can be found here: <https://github.com/eyang07/L3redex>.

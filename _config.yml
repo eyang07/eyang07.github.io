@@ -177,9 +177,6 @@ collections:
   research:
     output: true
     permalink: /research/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
   notes:
     output: false
     permalink: /notes/:path/

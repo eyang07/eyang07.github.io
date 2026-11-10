@@ -7,7 +7,7 @@ image: /assets/img/publication_preview/wave-mechanics.gif # optional thumbnail; 
 links:
   - label: code
     url: https://github.com/eyang07/physics-engine
-permalink: /projects/mathematical-physics-engine/
+permalink: /research/mathematical-physics-engine/
 ---
 
 An analytical mechanics and dynamical systems engine for modeling, simulating, and visualizing classical physical systems.

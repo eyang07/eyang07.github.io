@@ -2,7 +2,7 @@
 layout: page
 title: presentations
 permalink: /presentations/
-nav: true
+nav: false
 nav_order: 4
 description: Talks I've given formally and informally.
 ---

@@ -7,7 +7,7 @@ description: A Lean formalization of the Banach Fixed Point Theorem and its appl
 links:
   - label: code
     url: https://github.com/eyang07/lean-banach-bellman
-permalink: /projects/lean-banach-bellman/
+permalink: /research/lean-banach-bellman/
 ---
 
 I attended the Lean summer course at Utrecht University, directed by Johan Commelin, where I took courses on type theory and algebraic structures in Lean.
