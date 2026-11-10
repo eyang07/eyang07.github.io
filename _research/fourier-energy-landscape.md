@@ -2,10 +2,10 @@
 layout: page
 title: Fourier Regularity and Energy-Landscape Roughness under Gaussian Smoothing
 importance: 3
+published: false
+draft: true
 # --- review these fields ---
-status: ongoing
 role:
-year: 2026
 # ---------------------------
 description: Analytic bounds linking smoothing scale to Fourier decay and optimization geometry, motivated by energy-based and score-based generative models.
 permalink: /research/fourier-energy-landscape/

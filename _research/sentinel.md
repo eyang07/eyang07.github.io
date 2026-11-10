@@ -3,9 +3,7 @@ layout: page
 title: SENTINEL
 importance: 5
 # --- review these fields ---
-status: ongoing
 role:
-year: 2025
 # ---------------------------
 links:
   - label: code
