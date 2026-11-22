@@ -4,7 +4,6 @@ title: Redex implementation of L3
 context: CS 324
 importance: 3
 featured: true
-description: Joint work with Ray Tan.
 links:
   - label: code
     url: https://github.com/eyang07/L3redex
@@ -13,6 +12,6 @@ links:
 permalink: /research/redex-l3/
 ---
 
-A small-step semantics for L3, a linear language with locations. The L3 implementation in PLT Redex can be found here: <https://github.com/eyang07/L3redex>.
+A small-step semantics for L3, a linear language with locations. The L3 implementation in PLT Redex can be found here: <https://github.com/eyang07/L3redex>. Joint work with Ray Tan.
 
 See also the [L3 redex talk]({{ '/presentations/l3-linear-language-with-location/' | relative_url }}) on the presentations page.

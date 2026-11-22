@@ -7,7 +7,6 @@ draft: true
 # --- review these fields ---
 role:
 # ---------------------------
-description: Analytic bounds linking smoothing scale to Fourier decay and optimization geometry, motivated by energy-based and score-based generative models.
 permalink: /research/fourier-energy-landscape/
 ---
 

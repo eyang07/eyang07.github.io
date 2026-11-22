@@ -2,7 +2,6 @@
 layout: page
 title: Learning Modular Multiplication with Neural Networks
 importance: 6
-description: Neural modular multiplication for the SAIR challenge, with submission results and an evaluation audit.
 permalink: /research/neural-modular-multiplication/
 ---
 
