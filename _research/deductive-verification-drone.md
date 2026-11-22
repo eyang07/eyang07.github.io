@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Deductive Verification vs. Model Checking for Physical Safety of a Feedback-Controlled Drone
-importance: 1
+importance: 4
 # --- review these fields ---
 role:                    # e.g. Research Assistant
 # ---------------------------

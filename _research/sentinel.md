@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SENTINEL
-importance: 5
+importance: 7
 # --- review these fields ---
 role:
 # ---------------------------

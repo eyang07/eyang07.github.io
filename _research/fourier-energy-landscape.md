@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Fourier Regularity and Energy-Landscape Roughness under Gaussian Smoothing
-importance: 3
+importance: 8
 published: false
 draft: true
 # --- review these fields ---

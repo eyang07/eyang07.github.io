@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Mechanics Engine for Formal Verification
-importance: 1
+importance: 5
 featured: true
 image: /assets/img/publication_preview/wave-mechanics.gif # optional thumbnail; remove this line for a text-only row
 links:
