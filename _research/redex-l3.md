@@ -4,7 +4,7 @@ title: Redex implementation of L3
 context: CS 324
 importance: 3
 featured: true
-description: 
+description: Joint work with Ray Tan.
 links:
   - label: code
     url: https://github.com/eyang07/L3redex
