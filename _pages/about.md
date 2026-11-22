@@ -26,12 +26,3 @@ latest_posts:
 I am a senior at Northwestern University studying Computer Engineering and Mathematics. My research interests are in formal verification, particularly theorem proving and CPS verification. On the side, I am greatly interested in mathematical physics, and I am working on a senior thesis on Edward Witten's spinor geometry proof of the Positive Energy Theorem.
 
 Currently, I work as a research assistant at the IDEAS Lab, where I work on formal verification projects. I also contributed to DeepMind's <a href="https://github.com/google-deepmind/formal-conjectures">Formal Conjectures</a> through the Northwestern Lean Lab.
-
-## Selected work
-
-{% assign featured = site.research | concat: site.data.research | where: "featured", true | sort: "importance" %}
-{% include entry-list.liquid items=featured empty="Coming soon." %}
-
-## Education
-
-{% include education.liquid %}
